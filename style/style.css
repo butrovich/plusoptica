@@ -1,0 +1,442 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;1,300&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+}
+html {
+	height: 100%;
+	position: relative;
+}
+body {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+
+/* ------------ HEADER ------------ */
+
+.inicio {
+	width: 100%;
+	height: 100vh;
+	background-image: url(../img/modelos/desk/photo149569.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	transition: 6s;
+	/* animaciones pag de inicio */
+	animation-name: inicio;
+	animation-direction: alternate-reverse;
+	animation-duration: 30s;
+	animation-iteration-count: infinite;
+	animation-play-state: running;
+	animation-timing-function: ease-in-out;
+}
+@keyframes inicio {
+0% {
+		background-image: url(../img/modelos/desk/photo149569.jpg);
+}20%{
+	background-image: url(../img/modelos/desk/photo152293.jpg);
+}40%{
+	background-image: url(../img/modelos/desk/photo151535.jpg);
+}60%{
+	background-image: url(../img/modelos/desk/photo151493.jpg);
+}80%{
+	background-image: url(../img/modelos/desk/photo149568.jpg);
+}100%{
+	background-image: url(../img/modelos/desk/photo154691.jpg);
+}
+}
+
+.reservas,
+.nosotros,
+.productos,
+.catalogo {
+	background-image: url(../img/gafas/photo147349.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment:fixed;
+}
+
+/* ------------ NAVBAR ------------ */
+
+nav {
+	height: 110px;
+	width: 100%;
+	padding: 0 10%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	backdrop-filter: blur(3px);
+	background-color: rgba(255, 250, 250, 0.432);
+}
+nav img {
+	height: 60px;
+	vertical-align: middle;
+	transition: all 300ms;
+}
+nav img:hover {
+	scale: 1.15;
+}
+
+.links {
+	list-style: none;
+	display: flex;
+	gap: 2rem;
+	align-items: center;
+	text-align: center;
+}
+.links li {
+	transition: all 300ms;
+}
+.links a {
+	font-size: 1.5rem;
+	text-decoration: none;
+	font-weight: 900;
+	color: #1d1d1d;
+	cursor: pointer;
+}
+
+.links li:hover,
+.links a:hover {
+	scale: 1.15;
+	color: #19adf3;
+}
+
+/* ------- COMPARTIDO ENTRE PÁGINAS 1,2,3 y 4 ------- */
+
+.contenedor-marcas {
+	display: flex;
+	justify-content: center;
+	margin-top: 1rem;
+}
+.marca img {
+	height: 40px;
+	width: auto;
+	margin: 2rem 2rem;
+}
+
+.redes-sociales {
+	background-color: white;
+	display: flex;
+	justify-content: right;
+	gap: .5rem;
+	position: sticky;
+	top: 0;
+	margin: 0 10% 0 0;
+	padding: .5rem 0;
+	z-index: 2;
+}
+.redes-sociales .button {
+	display: flex;
+	height: 1.5rem;
+	width: 1.5rem;
+	font-size: 1.5rem;
+	cursor: pointer;
+	transition: all 300ms;	
+}
+.redes-sociales .button:hover {
+	scale: 1.2;
+}
+a:focus-visible {
+	outline: 1px solid #3f3f3f;
+	border-radius: 10px;
+	padding: 4px;
+}
+
+.btn-wpp {
+	position: fixed;
+	width: 80px;
+	height: 80px;
+	line-height: 80px;
+	bottom: 30px;
+	right: 30px;
+	text-align: center;
+	font-size: 50px;
+	color: white;
+	background: #19d354;
+	border-radius: 50%;
+	box-shadow: 0 0 10px rgba(0,0,0,.4);
+	z-index: 2;
+	transition: all 400ms;
+}
+
+.btn-wpp:hover {
+	text-decoration: none;
+	color: #19d354;
+	background: white;
+	scale: 1.1;
+}
+
+/* ------------ INDEX ------------ */
+
+.redes-index {
+	display: flex;
+	justify-content: center;
+	margin-top: 2rem;
+	gap: 1rem;
+}
+.redes-index .button {
+	display: flex;
+	height: 2rem;
+	width: 2rem;
+	font-size: 2rem;
+	cursor: pointer;
+	transition: all 300ms;	
+}
+.redes-index .button:hover {
+	scale: 1.2;
+}
+
+.facebook a,
+.instagram a,
+.twitter a,
+.youtube a {
+	color: #1d1d1d;
+}
+.facebook a:hover {
+	color: #4267b2;
+}
+.instagram a:hover {
+	background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+}
+.twitter a:hover {
+	color: #1da1f2;
+}
+.youtube a:hover {
+	color: red;
+}
+
+/* ------------ SOBRE NOSOTROS ------------ */
+.grid-container {
+	width: 100%;
+	height: auto;
+	display: grid;
+	grid-template-columns: 10% 1fr 1fr 10%;
+	grid-template-rows: auto auto auto auto auto;
+	align-items: center;
+	
+	grid-template-areas: 
+		".	  titulo			  titulo		 	   ."
+		".	   info		 			 info	   			 ."
+		".	 img-martin		 info-martin	   ."
+		".		convenios			convenios			 ."
+		".		garantias			garantias			 ."
+	;
+}
+.titulo {
+	grid-area: titulo;
+	z-index: 3;
+	font-size: 2rem;
+	margin: 0 0 1.5rem 5rem;
+}
+/* ------------ SOBRE NOSOTROS (data) ------------ */
+.descripcion {
+	grid-area: info;
+	height: 70vh;
+	margin: 1.5rem 0;
+	background-image: linear-gradient(rgba(255, 255, 255, 0.315),rgba(128, 128, 128, 0.315)), url(../img/local/espacio-principal.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	background-position: center;		
+}
+.filter {
+	height: 100%;
+	backdrop-filter: blur(5px);
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+}
+.data {
+	color: #1d1d1d;
+	font-size: 1.2rem;
+	text-align: justify;
+	line-height: 2.1rem;
+	height: auto;
+	padding: 5rem;
+	background-color: rgba(255, 255, 255, 0.503);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;	
+	gap: .5rem;
+}
+.data h2 {
+	font-size: 1.8rem;
+	margin-bottom: 1rem;
+}
+.data span {
+	color: #19adf3;
+}
+/* ------------ SOBRE NOSOTROS (img martín) ------------ */
+.img-martin {
+	grid-area: img-martin;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 1.5rem 0;
+}
+.img-martin img {
+	height: 450px;
+	border-radius: 50%;
+	padding: 2rem 0;
+	z-index: 3;
+}
+/* ------------ SOBRE NOSOTROS (cv martín) ------------ */
+.info-martin {
+	grid-area: info-martin;
+	display: flex;
+	align-items: center;
+	color: #1d1d1d;
+}
+.info-martin h2,
+.convenios h2,
+.garantias h2 {
+	font-size: 1.8rem;
+	color: #19adf3;
+}
+.info-martin li {
+	list-style: none;
+	font-size: 1.2rem;
+	margin-top: 1rem;
+	margin-bottom: .2rem;
+	font-weight: bold;
+}
+.skills {
+	display: inline-block;
+	background-color: #737373;
+	color: white;
+	padding: 10px;
+	margin: 5px 5px 5px 0;
+	border-radius: 15px;
+}
+.skills:hover {
+	background-color: #19adf3;
+}
+/* ------------ SOBRE NOSOTROS (convenios) ------------ */
+.convenios {
+	grid-area: convenios;
+	margin: 1.5rem 0;
+	max-width: 70%;
+}
+.convenios li {
+	list-style: none;
+	display: flex;
+	align-items: center;
+	padding: 5px;
+	gap: 15px;
+}
+.convenios li::before {
+	content: '';
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	background-image: url(../img/logos/tick-verde.jpg);
+	background-size: cover;
+}
+.convenios p {
+	margin: 20px 0;
+	font-size: 1.2rem;
+}
+/* ------------ SOBRE NOSOTROS (garantías) ------------ */
+.garantias {
+	grid-area: garantias;
+	max-width: 70%;
+	margin: 1.5rem 0;
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+	font-size: 1.2rem;
+}
+.garantias span {
+	color: #19adf3;
+	font-weight: bold;
+}
+.aclaracion {
+	font-size: 1rem;
+}
+
+/* ------------ SOBRE NOSOTROS (img pie de pag) ------------ */
+.imagen-pie {
+	height: 15rem;
+	background-image: url(../img/local/Plus-Optica-2-a.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment:fixed;
+}
+.imagen-pie h3 {
+	backdrop-filter: blur(5px);
+	height: 100%;
+	color: transparent;
+}
+
+/* ------------ RESERVAS ------------ */
+
+.reserva-form {
+	width: 480px;
+	height: 700px;
+	border-radius: 40px;
+	color: #1d1d1d;
+	font-size: 1.4rem;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.5rem;
+	background-image: linear-gradient(rgba(255, 255, 255, 0.315),rgba(128, 128, 128, 0.315)) ,url(../img/modelos/movil/photo151486.jpg);
+	background-size: cover;
+}
+.reserva-form h2 {
+	color: #1d1d1dbf;
+	border-radius: 200px;
+	margin-top: 2rem;
+	padding: 1rem;
+	background-color: rgba(255, 255, 255, 0.624);
+}
+
+.reserva-form input {
+	width: 50%;
+	font-size: 1.4rem;
+	padding: .8rem;
+	background-color: rgba(255, 255, 255, 0.624);
+	border: none;
+	border-radius: 50px;
+	text-align: center;
+}
+
+.reserva-form input::placeholder {
+	color: #1d1d1d;
+}
+
+/* ------------ FOOTER ------------ */
+
+footer {
+	background-color: #1d1d1d;
+	color: #a8a8a8;
+	width: 100%;
+	font-weight: 400;
+	padding: 3rem;
+	margin-top: auto;
+	display: flex;
+	justify-content: center;
+	gap: 4rem;
+}
+footer h3 {
+	color: #a8a8a8;
+	font-weight: 700;
+	margin-bottom: 1rem;
+}
+footer li {
+	list-style: none;
+	line-height: 23px;
+}
+footer a {
+	color: #a8a8a8;
+	font-weight: 400;
+}
