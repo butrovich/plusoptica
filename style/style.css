@@ -38,7 +38,7 @@ body {
 }
 @keyframes inicio {
 0% {
-		background-image: url(../img/modelos/desk/photo149569.jpg);
+	background-image: url(../img/modelos/desk/photo149569.jpg);
 }20%{
 	background-image: url(../img/modelos/desk/photo152293.jpg);
 }40%{
@@ -72,7 +72,7 @@ nav {
 	align-items: center;
 	justify-content: space-between;
 	backdrop-filter: blur(3px);
-	background-color: rgba(255, 250, 250, 0.432);
+	background-color: rgba(255, 250, 250, 0.543);
 }
 nav img {
 	height: 60px;
@@ -94,7 +94,7 @@ nav img:hover {
 	transition: all 300ms;
 }
 .links a {
-	font-size: 1.5rem;
+	font-size: 1.4rem;
 	text-decoration: none;
 	font-weight: 900;
 	color: #1d1d1d;
@@ -106,6 +106,73 @@ nav img:hover {
 	scale: 1.15;
 	color: #19adf3;
 }
+
+/* ------- PARTE RESPONSIVE DE NAVBAR - MENÚ DESPLEGABLE ------- */
+
+nav .toggle-btn {
+	color: #1d1d1d;
+	font-size: 1.6rem;
+	cursor: pointer;
+	display: none;
+}
+nav .desplegable {
+	display: none;
+	position: absolute;
+	height: 0;
+	right: 14%;
+	top: 40px;
+	width: 300px;
+	background-color: rgba(255, 250, 250, 0.817);
+	border-radius: 20px;
+	overflow: hidden;
+	transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+nav .desplegable.open {
+	height: auto;
+	z-index: 100;
+}
+
+.desplegable a {
+	text-decoration: none;
+	font-size: 1.4rem;
+	color: #1d1d1d;
+}
+.desplegable li {
+	margin: 1.8rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 300ms;
+}
+.desplegable li:hover,
+.desplegable a:hover {
+	scale: 1.15;
+	color: #19adf3;
+}
+
+@media (max-width: 1250px) {
+	nav .links {
+		display: none;
+	}
+	nav .toggle-btn {
+		display: block;
+
+	}
+	nav .desplegable {
+		display: block;
+	}
+}
+
+@media (max-width: 576px) {
+	nav .desplegable {
+		top: 90px;
+		left: 10%;
+		right: 10%;
+		width: auto;
+	}
+}
+
+
 
 /* ------- COMPARTIDO ENTRE PÁGINAS 1,2,3 y 4 ------- */
 
@@ -137,7 +204,7 @@ nav img:hover {
 	width: 1.5rem;
 	font-size: 1.5rem;
 	cursor: pointer;
-	transition: all 300ms;	
+	transition: all 300ms;
 }
 .redes-sociales .button:hover {
 	scale: 1.2;
@@ -186,7 +253,7 @@ a:focus-visible {
 	width: 2rem;
 	font-size: 2rem;
 	cursor: pointer;
-	transition: all 300ms;	
+	transition: all 300ms;
 }
 .redes-index .button:hover {
 	scale: 1.2;
@@ -222,8 +289,8 @@ a:focus-visible {
 	grid-template-columns: 10% 1fr 1fr 10%;
 	grid-template-rows: auto auto auto auto auto;
 	align-items: center;
-	
-	grid-template-areas: 
+
+	grid-template-areas:
 		".	  titulo			  titulo		 	   ."
 		".	   info		 			 info	   			 ."
 		".	 img-martin		 info-martin	   ."
@@ -245,7 +312,7 @@ a:focus-visible {
 	background-image: linear-gradient(rgba(255, 255, 255, 0.315),rgba(128, 128, 128, 0.315)), url(../img/local/espacio-principal.jpg);
 	background-repeat: no-repeat;
 	background-size: 100% auto;
-	background-position: center;		
+	background-position: center;
 }
 .filter {
 	height: 100%;
@@ -264,7 +331,7 @@ a:focus-visible {
 	background-color: rgba(255, 255, 255, 0.503);
 	display: flex;
 	flex-direction: column;
-	justify-content: center;	
+	justify-content: center;
 	gap: .5rem;
 }
 .data h2 {
