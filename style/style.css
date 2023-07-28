@@ -181,15 +181,15 @@ nav .desplegable.open {
 
 /* ------- COMPARTIDO ENTRE PÁGINAS 1,2,3 y 4 ------- */
 
-.contenedor-marcas {
+.contenedor-carousel {
 	display: flex;
 	justify-content: center;
-	margin-top: 1rem;
+	align-items: center;
 }
-.marca img {
+.carousel-item img {
 	height: 40px;
 	width: auto;
-	margin: 2rem 2rem;
+	margin: 3rem;
 }
 
 .redes-sociales {
@@ -338,6 +338,7 @@ a:focus-visible {
 	flex-direction: column;
 	justify-content: center;
 	gap: .5rem;
+	overflow: hidden;
 }
 .data h2 {
 	font-size: 1.8rem;
@@ -345,6 +346,10 @@ a:focus-visible {
 }
 .data span {
 	color: #19adf3;
+}
+
+@media (max-width: 920px) {
+
 }
 /* ------------ SOBRE NOSOTROS (img martín) ------------ */
 .img-martin {
@@ -503,7 +508,6 @@ footer {
 footer h3 {
 	color: #a8a8a8;
 	font-weight: 700;
-	margin-bottom: 1rem;
 }
 footer li {
 	list-style: none;
@@ -512,4 +516,13 @@ footer li {
 footer a {
 	color: #a8a8a8;
 	font-weight: 400;
+}
+
+@media (max-width: 920px) {
+	footer {
+		display: inline-block;
+	}
+	footer ul {
+		margin: 1.5rem;
+	}	
 }
