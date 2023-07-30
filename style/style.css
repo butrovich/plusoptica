@@ -220,8 +220,6 @@ nav .desplegable.open {
 	}
 }
 
-
-
 /* ------- COMPARTIDO ENTRE PÁGINAS 1,2,3 y 4 ------- */
 
 .contenedor-carousel {
@@ -237,13 +235,14 @@ nav .desplegable.open {
 
 .redes-sociales {
 	background-color: white;
+	width: 100%;
 	display: flex;
 	justify-content: right;
 	gap: .5rem;
 	position: sticky;
 	top: 110px;
 	margin: 0 10% 0 0;
-	padding: .5rem 0;
+	padding: .5rem 10%;
 	z-index: 2;
 }
 .redes-sociales .button {
@@ -335,27 +334,22 @@ a:focus-visible {
 	height: auto;
 	display: grid;
 	grid-template-columns: 10% 1fr 1fr 10%;
-	grid-template-rows: auto auto auto auto auto;
+	grid-template-rows: auto auto auto auto;
 	align-items: center;
 
 	grid-template-areas:
-		".	  titulo			  titulo		 	   ."
 		".	   info		 			 info	   			 ."
 		".	 img-martin		 info-martin	   ."
 		".		convenios			convenios			 ."
 		".		garantias			garantias			 ."
 	;
 }
-.titulo {
-	grid-area: titulo;
-	z-index: 3;
-	font-size: 2rem;
-	margin: 0 0 1.5rem 5rem;
-}
+
 /* ------------ SOBRE NOSOTROS (data) ------------ */
 .descripcion {
 	grid-area: info;
-	height: 70vh;
+	height: 700px;
+	top: 200px;
 	margin: 1.5rem 0;
 	background-image: linear-gradient(rgba(255, 255, 255, 0.315),rgba(128, 128, 128, 0.315)), url(../img/local/espacio-principal.jpg);
 	background-repeat: no-repeat;
@@ -367,21 +361,20 @@ a:focus-visible {
 	backdrop-filter: blur(5px);
 	display: flex;
 	align-items: center;
-	overflow: hidden;
 }
 .data {
 	color: #1d1d1d;
 	font-size: 1.2rem;
 	text-align: justify;
 	line-height: 2.1rem;
-	height: auto;
+	height: 600px;
 	padding: 5rem;
 	background-color: rgba(255, 255, 255, 0.503);
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: right;	
 	gap: .5rem;
-	overflow: hidden;
+	overflow: auto;
 }
 .data h2 {
 	font-size: 1.8rem;
@@ -391,22 +384,17 @@ a:focus-visible {
 	color: #19adf3;
 }
 
-@media (max-width: 920px) {
-
-}
 /* ------------ SOBRE NOSOTROS (img martín) ------------ */
 .img-martin {
 	grid-area: img-martin;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin: 1.5rem 0;
 }
 .img-martin img {
 	height: 450px;
 	border-radius: 50%;
-	padding: 2rem 0;
-	z-index: 3;
+	padding: 3rem 0;
 }
 /* ------------ SOBRE NOSOTROS (cv martín) ------------ */
 .info-martin {
@@ -420,6 +408,9 @@ a:focus-visible {
 .garantias h2 {
 	font-size: 1.8rem;
 	color: #19adf3;
+}
+.info-martin ul {
+	padding: 0;
 }
 .info-martin li {
 	list-style: none;
@@ -439,11 +430,15 @@ a:focus-visible {
 .skills:hover {
 	background-color: #19adf3;
 }
+
 /* ------------ SOBRE NOSOTROS (convenios) ------------ */
 .convenios {
 	grid-area: convenios;
 	margin: 1.5rem 0;
 	max-width: 70%;
+}
+.convenios ul {
+	padding: 0;
 }
 .convenios li {
 	list-style: none;
@@ -481,6 +476,54 @@ a:focus-visible {
 .aclaracion {
 	font-size: 1rem;
 }
+
+@media (max-width: 1250px) {
+	.grid-container {
+		grid-template-columns: 5% 1fr 1fr 5%;
+		grid-template-rows: auto auto auto auto auto;	
+		grid-template-areas:
+			".	   info		 			 info	   			  ."
+			".	 img-martin		 img-martin	      ."
+			".	 info-martin	 info-martin	  	."
+			".		convenios			convenios			  ."
+			".		garantias			garantias			  ."
+		;
+	}
+
+	.data h2 {
+		text-align: left;
+	}
+	.descripcion {
+		background-repeat: repeat-y;
+	}
+}
+
+@media (max-width: 576px) {
+	.grid-container {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto auto auto auto auto;
+		align-items: center;	
+		grid-template-areas:
+			"	   info		 			 info	   			"
+			"	 img-martin		 img-martin	    "
+			"	 info-martin		 info-martin	"
+			"		convenios			convenios			"
+			"		garantias			garantias			"
+		;
+	}
+
+	.data {
+		padding: 1.4rem;
+	}
+	.convenios,
+	.garantias,
+	.info-martin {
+		padding: 0 5%;
+		max-width: 100%;
+		text-align: justify;
+	}
+}
+
 
 /* ------------ SOBRE NOSOTROS (img pie de pag) ------------ */
 .imagen-pie {
