@@ -133,7 +133,8 @@ nav .desplegable {
 	transition: height 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275) ;
 }
 nav .desplegable.open {
-	height: 270px;
+	height: 300px;
+	text-align: center;
 	z-index: 100;
 }
 
@@ -141,6 +142,10 @@ nav .desplegable.open {
 	text-decoration: none;
 	font-size: 1.4rem;
 	color: #1d1d1d;
+}
+.desplegable ul {
+	padding: 0;
+	margin: 0;
 }
 .desplegable li {
 	margin: 1.8rem;
@@ -466,7 +471,7 @@ a:focus-visible {
 	flex-direction: column;
 	align-items: center;
 	gap: 1.5rem;
-	background-image: linear-gradient(rgba(255, 255, 255, 0.315),rgba(128, 128, 128, 0.315)) ,url(../img/modelos/movil/photo151486.jpg);
+	background-image: linear-gradient(rgba(255, 255, 255, 0.315),rgba(128, 128, 128, 0.315)) ,url(../img/modelos/movil/form/photo151486.jpg);
 	background-size: cover;
 }
 .reserva-form h2 {
