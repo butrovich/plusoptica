@@ -20,23 +20,23 @@ body {
 
 /* ------------ HEADER ------------ */
 
-.inicio {
+.inicio-web {
 	width: 100%;
 	height: 100vh;
 	background-image: url(../img/modelos/desk/photo149569.jpg);
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-	transition: 6s;
+	transition: 4s;
 	/* animaciones pag de inicio */
-	animation-name: inicio;
+	animation-name: inicio-web;
 	animation-direction: alternate-reverse;
-	animation-duration: 30s;
+	animation-duration: 24s;
 	animation-iteration-count: infinite;
 	animation-play-state: running;
 	animation-timing-function: ease-in-out;
 }
-@keyframes inicio {
+@keyframes inicio-web {
 0% {
 	background-image: url(../img/modelos/desk/photo149569.jpg);
 }20%{
@@ -52,6 +52,41 @@ body {
 }
 }
 
+@media (max-width: 576px) {
+	.inicio-movil {
+		width: 100%;
+		height: 100vh;
+		background-image: url(../img/modelos/movil/index/photo150413.jpg);
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		transition: 4s;
+		/* animaciones pag de inicio */
+		animation-name: inicio-movil;
+		animation-direction: alternate-reverse;
+		animation-duration: 24s;
+		animation-iteration-count: infinite;
+		animation-play-state: running;
+		animation-timing-function: ease-in-out;
+	}
+	
+	@keyframes inicio-movil {
+		0% {
+			background-image: url(../img/modelos/movil/index/photo152002.jpg);
+		}20%{
+			background-image: url(../img/modelos/movil/index/photo161837.jpg);
+		}40%{
+			background-image: url(../img/modelos/movil/index/photo150663.jpg);
+		}60%{
+			background-image: url(../img/modelos/movil/index/photo154836.jpg);
+		}80%{
+			background-image: url(../img/modelos/movil/index/photo153343.jpg);
+		}100%{
+			background-image: url(../img/modelos/movil/index/photo150413.jpg);
+	}
+	}	
+}
+
 .reservas,
 .nosotros,
 .productos,
@@ -60,6 +95,9 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment:fixed;
+	position: sticky;
+	top: 0;
+	z-index: 5;
 }
 
 /* ------------ NAVBAR ------------ */
@@ -203,7 +241,7 @@ nav .desplegable.open {
 	justify-content: right;
 	gap: .5rem;
 	position: sticky;
-	top: 0;
+	top: 110px;
 	margin: 0 10% 0 0;
 	padding: .5rem 0;
 	z-index: 2;
