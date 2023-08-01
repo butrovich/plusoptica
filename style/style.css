@@ -164,12 +164,12 @@ nav .desplegable.open {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	width: auto;
 }
 .carousel-item img {
-	height: 40px;
-	width: auto;
-	margin: 3rem;
+	margin: 3rem 1rem;
 }
+
 
 .redes-sociales {
 	background-color: white;
@@ -243,29 +243,25 @@ a:focus-visible {
 .redes-index .button:hover {
 	scale: 1.2;
 }
-
-.facebook a,
-.instagram a,
-.twitter a,
-.youtube a {
+.icon {
 	color: #1d1d1d;
-}
-.facebook a:hover {
+ }
+
+.facebook:hover {
 	color: #4267b2;
 }
-.instagram a:hover {
+.instagram:hover {
 	background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
 	background-clip: text;
 	-webkit-background-clip: text;
 	color: transparent;
 }
-.twitter a:hover {
+.twitter:hover {
 	color: #1da1f2;
 }
-.youtube a:hover {
+.youtube:hover {
 	color: red;
 }
-
 /* ------------ SOBRE NOSOTROS ------------ */
 .grid-container {
 	width: 100%;
@@ -416,17 +412,30 @@ a:focus-visible {
 }
 
 /* ------------ SOBRE NOSOTROS (img pie de pag) ------------ */
-.imagen-pie {
+.img-pie {
 	height: 15rem;
 	background-image: url(../img/local/Plus-Optica-2-a.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment:fixed;
 }
-.imagen-pie h3 {
+.img-pie h3 {
 	backdrop-filter: blur(5px);
 	height: 100%;
 	color: transparent;
+}
+
+/* ------------ SERVICIOS & PRODUCTOS ------------ */
+
+.img {
+	width: 100%;
+	height: auto;
+}
+
+/* ------------ CATÁLOGO ------------ */
+
+.catalogo-conteiner img {
+	width: 200px;
 }
 
 /* ------------ RESERVAS ------------ */
@@ -447,7 +456,7 @@ a:focus-visible {
 	animation-duration: 24s;
 	animation-iteration-count: infinite;
 	animation-play-state: running;
-}
+} 
 @keyframes form {
 	0% {
 		background-image: url(../img/modelos/movil/form/photo151486.jpg);
@@ -490,25 +499,26 @@ a:focus-visible {
 
 footer {
 	background-color: #1d1d1d;
-	color: #a8a8a8;
 	width: 100%;
-	font-weight: 400;
 	padding: 3rem;
 	margin-top: auto;
 	display: flex;
 	justify-content: center;
 	gap: 4rem;
 }
-footer h3 {
+.col-footer {
 	color: #a8a8a8;
+	font-weight: 400;	
+}
+.col-footer h3 {
 	font-weight: 700;
 	font-size: 1.3rem;
 }
-footer li {
+.col-footer li {
 	list-style: none;
 	line-height: 23px;
 }
-footer a {
+.col-footer a {
 	color: #a8a8a8;
 	font-weight: 400;
 }
@@ -614,5 +624,8 @@ footer a {
 	.reserva-form {
 		width: 100%;
 		border-radius: 0;
+	}
+	.btn-wpp {
+		display: none;
 	}
 }
