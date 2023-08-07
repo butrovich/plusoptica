@@ -1,710 +1,667 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;1,300&display=swap');
-
+@charset "UTF-8";
+/* ------- FUENTES & RESETEO ------- */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;1,300&display=swap");
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
-html {
-	height: 100%;
-	position: relative;
+*::-moz-selection {
+  color: white;
+  background-color: #19adf3;
 }
-body {
-	margin: 0;
-	padding: 0;
-	display: flex;
-	flex-direction: column;
-	min-height: 100%;
+*::selection {
+  color: white;
+  background-color: #19adf3;
 }
 
-/* ------------ HEADER ------------ */
-
-.inicio-web {
-	width: 100%;
-	height: 100vh;
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	transition: all 4s ease;
-	animation-direction: alternate;
-	animation-name: inicio-web;
-	animation-duration: 24s;
-	animation-iteration-count: infinite;
-	animation-play-state: running;
-}
-@keyframes inicio-web {
-0% {
-	background-image: url(../img/modelos/desk/photo154691.jpg);
-}20%{
-	background-image: url(../img/modelos/desk/photo152293.jpg);
-}40%{
-	background-image: url(../img/modelos/desk/photo151535.jpg);
-}60%{
-	background-image: url(../img/modelos/desk/photo151493.jpg);
-}80%{
-	background-image: url(../img/modelos/desk/photo149568.jpg);
-}100%{
-	background-image: url(../img/modelos/desk/photo149569.jpg);
-}
-}
-
-.reservas,
-.nosotros,
-.productos,
-.catalogo {
-	background-image: url(../img/gafas/photo147349.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-attachment:fixed;
-	position: sticky;
-	top: 0;
-	z-index: 5;
-}
-
-/* ------------ NAVBAR ------------ */
-
-nav {
-	height: 110px;
-	width: 100%;
-	padding: 0 10%;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	backdrop-filter: blur(3px);
-	background-color: rgba(255, 250, 250, 0.543);
-	position: relative;
-	z-index: 5;
-}
-nav img {
-	height: 60px;
-	vertical-align: middle;
-	transition: all 300ms;
-}
-nav img:hover {
-	scale: 1.15;
-}
-
-.links {
-	list-style: none;
-	display: flex;
-	gap: 2rem;
-	align-items: center;
-	text-align: center;
-}
-.links li {
-	transition: all 300ms;
-}
-.links a {
-	font-size: 1.4rem;
-	text-decoration: none;
-	font-weight: 900;
-	color: #1d1d1d;
-	cursor: pointer;
-}
-
-.links li:hover,
-.links a:hover {
-	scale: 1.15;
-	color: #19adf3;
-}
-
-/* ------- PARTE RESPONSIVE DE NAVBAR - MENÚ DESPLEGABLE ------- */
-
-nav .toggle-btn {
-	color: #1d1d1d;
-	font-size: 1.6rem;
-	cursor: pointer;
-	display: none;
-}
-nav .desplegable {
-	display: none;
-	position: absolute;
-	height: 0;
-	right: 14%;
-	top: 40px;
-	width: 300px;
-	background-color: rgba(255, 250, 250, 0.892);
-	border-radius: 20px;
-	overflow: hidden;
-	transition: height 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275) ;
-}
-nav .desplegable.open {
-	height: 300px;
-	text-align: center;
-	z-index: 100;
-}
-
-.desplegable a {
-	text-decoration: none;
-	font-size: 1.4rem;
-	color: #1d1d1d;
-}
-.desplegable ul {
-	padding: 0;
-	margin: 0;
-}
-.desplegable li {
-	margin: 1.8rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	transition: all 300ms;
-}
-.desplegable li:hover,
-.desplegable a:hover {
-	scale: 1.05;
-	color: #19adf3;
-}
-
-
-/* ------- COMPARTIDO ENTRE PÁGINAS 1,2,3 y 4 ------- */
-
-.contenedor-carousel {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: auto;
-}
-.carousel-item img {
-	margin: 3rem 1rem;
-}
-
-
-.redes-sociales {
-	background-color: white;
-	width: 100%;
-	display: flex;
-	justify-content: right;
-	gap: .5rem;
-	position: sticky;
-	top: 110px;
-	padding: .5rem 10%;
-	z-index: 2;
-}
-.redes-sociales .button {
-	display: flex;
-	align-items: center;
-	height: 1.5rem;
-	width: 1.5rem;
-	font-size: 1.5rem;
-	cursor: pointer;
-	transition: all 300ms;
-}
-.redes-sociales .button:hover {
-	scale: 1.2;
-}
 a:focus-visible {
-	outline: 1px solid #3f3f3f;
-	border-radius: 10px;
-	padding: 4px;
+  outline: 1px solid #3f3f3f;
+  border-radius: 10px;
+  padding: 4px;
 }
 
-.btn-wpp {
-	position: fixed;
-	width: 80px;
-	height: 80px;
-	line-height: 80px;
-	bottom: 30px;
-	right: 30px;
-	text-align: center;
-	font-size: 50px;
-	color: white;
-	background: #19d354;
-	border-radius: 50%;
-	box-shadow: 0 0 10px rgba(0,0,0,.4);
-	z-index: 2;
-	transition: all 400ms;
+/* ------- AJUSTES PARA ELEMENTOS DE BOOTSTRAP ------- */
+.contenedor-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
 }
-
-.btn-wpp:hover {
-	text-decoration: none;
-	color: #19d354;
-	background: white;
-	scale: 1.1;
-}
-
-/* ------------ INDEX ------------ */
-
-.redes-index {
-	display: flex;
-	justify-content: center;
-	margin-top: 2rem;
-	gap: 1rem;
-}
-.redes-index .button {
-	display: flex;
-	height: 2rem;
-	width: 2rem;
-	font-size: 2rem;
-	cursor: pointer;
-	transition: all 300ms;
-}
-.redes-index .button:hover {
-	scale: 1.2;
-}
-.icon {
-	color: #1d1d1d;
- }
-
-.facebook:hover {
-	color: #4267b2;
-}
-.instagram:hover {
-	background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-	background-clip: text;
-	-webkit-background-clip: text;
-	color: transparent;
-}
-.twitter:hover {
-	color: #1da1f2;
-}
-.youtube:hover {
-	color: red;
-}
-/* ------------ SOBRE NOSOTROS ------------ */
-.grid-container {
-	width: 100%;
-	height: auto;
-	display: grid;
-	grid-template-columns: 10% 1fr 1fr 10%;
-	grid-template-rows: auto auto auto auto;
-	align-items: center;
-
-	grid-template-areas:
-		".	   info		 			 info	   			 ."
-		".	 img-martin		 info-martin	   ."
-		".		convenios			convenios			 ."
-		".		garantias			garantias			 ."
-	;
-}
-
-/* ------------ SOBRE NOSOTROS (data) ------------ */
-.descripcion {
-	grid-area: info;
-	height: 700px;
-	top: 200px;
-	margin: 1.5rem 0;
-	background-image: linear-gradient(rgba(255, 255, 255, 0.315),rgba(128, 128, 128, 0.315)), url(../img/local/espacio-principal.jpg);
-	background-repeat: no-repeat;
-	background-size: 100% auto;
-	background-position: center;
-}
-.filter {
-	height: 100%;
-	backdrop-filter: blur(5px);
-	display: flex;
-	align-items: center;
-}
-.data {
-	color: #1d1d1d;
-	font-size: 1.2rem;
-	text-align: justify;
-	line-height: 2.1rem;
-	height: 600px;
-	padding: 5rem;
-	background-color: rgba(255, 255, 255, 0.503);
-	display: flex;
-	flex-direction: column;
-	justify-content: right;	
-	gap: .5rem;
-	overflow: auto;
-}
-.data h2 {
-	font-size: 1.8rem;
-	margin-bottom: 1rem;
-}
-.data span {
-	color: #19adf3;
-}
-
-/* ------------ SOBRE NOSOTROS (img martín) ------------ */
-.img-martin {
-	grid-area: img-martin;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-.img-martin img {
-	height: 450px;
-	border-radius: 50%;
-	padding: 3rem 0;
-}
-/* ------------ SOBRE NOSOTROS (cv martín) ------------ */
-.info-martin {
-	grid-area: info-martin;
-	display: flex;
-	align-items: center;
-	color: #1d1d1d;
-}
-.info-martin h2,
-.convenios h2,
-.garantias h2 {
-	font-size: 1.8rem;
-	color: #19adf3;
-}
-.info-martin ul {
-	padding: 0;
-}
-.info-martin li {
-	list-style: none;
-	font-size: 1.2rem;
-	margin-top: 1rem;
-	margin-bottom: .2rem;
-	font-weight: bold;
-}
-.skills {
-	display: inline-block;
-	background-color: #737373;
-	color: white;
-	padding: 10px;
-	margin: 5px 5px 5px 0;
-	border-radius: 15px;
-}
-.skills:hover {
-	background-color: #19adf3;
-}
-
-/* ------------ SOBRE NOSOTROS (convenios) ------------ */
-.convenios {
-	grid-area: convenios;
-	margin: 1.5rem 0;
-	max-width: 70%;
-}
-.convenios ul {
-	padding: 0;
-}
-.convenios li {
-	list-style: none;
-	display: flex;
-	align-items: center;
-	padding: 5px;
-	gap: 15px;
-}
-.convenios li::before {
-	content: '';
-	display: inline-block;
-	width: 25px;
-	height: 25px;
-	background-image: url(../img/logos/tick-verde.jpg);
-	background-size: cover;
-}
-.convenios p {
-	margin: 20px 0;
-	font-size: 1.2rem;
-}
-/* ------------ SOBRE NOSOTROS (garantías) ------------ */
-.garantias {
-	grid-area: garantias;
-	max-width: 70%;
-	margin: 1.5rem 0;
-	display: flex;
-	flex-direction: column;
-	gap: 25px;
-	font-size: 1.2rem;
-}
-.garantias span {
-	color: #19adf3;
-	font-weight: bold;
-}
-.aclaracion {
-	font-size: 1rem;
-}
-
-/* ------------ SOBRE NOSOTROS (img pie de pag) ------------ */
-.img-pie {
-	height: 15rem;
-	background-image: url(../img/local/Plus-Optica-2-a.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-attachment:fixed;
-}
-.img-pie h3 {
-	backdrop-filter: blur(5px);
-	height: 100%;
-	color: transparent;
-}
-
-/* ------------ SERVICIOS & PRODUCTOS ------------ */
-
-.menu-productos {
-	width: 100%;
-	padding: 0 10%;
-	position: sticky;
-	top: 142px;
-	background-color: white;
-}
-
-.menu-productos .navbar {
-	display: flex;
-	justify-content: center;
-	gap: 1.5rem;
-}
-
-.menu-productos .navbar img {
-	height: 80px;
+.contenedor-carousel .carousel-item img {
+  margin: 3rem 1rem;
 }
 
 .contenedor-carousel-galeria {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin: 3rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem auto;
+}
+
+/* ------- HEADER & NAVBAR ------- */
+.inicio-web {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 4s ease;
+  animation-direction: alternate;
+  animation-name: inicio-web;
+  animation-duration: 24s;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+
+@keyframes inicio-web {
+  0% {
+    background-image: url(../img/modelos/desk/photo154691.jpg);
+  }
+  20% {
+    background-image: url(../img/modelos/desk/photo152293.jpg);
+  }
+  40% {
+    background-image: url(../img/modelos/desk/photo151535.jpg);
+  }
+  60% {
+    background-image: url(../img/modelos/desk/photo151493.jpg);
+  }
+  80% {
+    background-image: url(../img/modelos/desk/photo149568.jpg);
+  }
+  100% {
+    background-image: url(../img/modelos/desk/photo149569.jpg);
+  }
+}
+.header {
+  background-image: url(../img/gafas/photo147349.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+header nav {
+  height: 110px;
+  width: 100%;
+  padding: 0 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  background-color: rgba(255, 250, 250, 0.543);
+  position: relative;
+  z-index: 5;
+}
+header nav img {
+  height: 60px;
+  vertical-align: middle;
+  transition: all 300ms;
+}
+header nav img:hover {
+  scale: 1.15;
+}
+header nav .links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  text-align: center;
+}
+header nav .links li {
+  transition: all 300ms;
+}
+header nav .links li:hover {
+  scale: 1.15;
+}
+header nav .links li a {
+  font-size: 1.4rem;
+  text-decoration: none;
+  font-weight: 900;
+  color: #1d1d1d;
+  cursor: pointer;
+}
+header nav .links li a:hover {
+  color: #19adf3;
+}
+header nav .toggle-btn {
+  color: #1d1d1d;
+  font-size: 1.6rem;
+  cursor: pointer;
+  display: none;
+}
+header nav .desplegable {
+  display: none;
+  position: absolute;
+  height: 0;
+  right: 14%;
+  top: 40px;
+  width: 300px;
+  background-color: rgba(255, 250, 250, 0.892);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: height 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+header nav .desplegable.open {
+  height: 300px;
+  text-align: center;
+  z-index: 100;
+}
+header nav .desplegable ul {
+  padding: 0;
+  margin: 0;
+}
+header nav .desplegable ul li {
+  margin: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 300ms;
+}
+header nav .desplegable ul li:hover {
+  scale: 1.05;
+}
+header nav .desplegable ul li a {
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: #1d1d1d;
+}
+header nav .desplegable ul li a:hover {
+  color: #19adf3;
+}
+
+/* ------- REDES SOCIALES ------- */
+.redes-index {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+.redes-index .button {
+  display: flex;
+  height: 2rem;
+  width: 2rem;
+  font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 300ms;
+}
+.redes-index .button:hover {
+  scale: 1.2;
+}
+
+.icon {
+  color: #1d1d1d;
+}
+
+.facebook:hover {
+  color: #4267b2;
+}
+
+.instagram:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.twitter:hover {
+  color: #1da1f2;
+}
+
+.youtube:hover {
+  color: red;
+}
+
+.redes-sociales {
+  background-color: white;
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  gap: 0.5rem;
+  position: sticky;
+  top: 110px;
+  padding: 0.5rem 10%;
+  z-index: 2;
+}
+.redes-sociales .button {
+  display: flex;
+  align-items: center;
+  height: 1.5rem;
+  width: 1.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 300ms;
+}
+.redes-sociales .button:hover {
+  scale: 1.2;
+}
+.redes-sociales .btn-wpp {
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  bottom: 30px;
+  right: 30px;
+  text-align: center;
+  font-size: 50px;
+  color: white;
+  background: #19d354;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+  transition: all 400ms;
+}
+.redes-sociales .btn-wpp:hover {
+  text-decoration: none;
+  color: #19d354;
+  background: white;
+  scale: 1.1;
+}
+
+/* ------- PAGE 1 - NOSOTROS ------- */
+.grid-container {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 10% 1fr 1fr 10%;
+  grid-template-rows: auto auto auto auto;
+  align-items: center;
+  grid-template-areas: ".    info          info          ." ".    img-martin    info-martin   ." ".    convenios     convenios     ." ".    garantias     garantias     .";
+}
+.grid-container .descripcion {
+  grid-area: info;
+  height: 700px;
+  top: 200px;
+  margin: 1.5rem 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.315), rgba(128, 128, 128, 0.315)), url(../img/local/espacio-principal.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+}
+.grid-container .descripcion .filter {
+  height: 100%;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+}
+.grid-container .descripcion .filter .data {
+  color: #1d1d1d;
+  font-size: 1.2rem;
+  text-align: justify;
+  line-height: 2.1rem;
+  height: 600px;
+  padding: 5rem;
+  background-color: rgba(255, 255, 255, 0.503);
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  gap: 0.5rem;
+  overflow: auto;
+}
+.grid-container .descripcion .filter .data h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.grid-container .descripcion .filter .data span {
+  color: #19adf3;
+}
+.grid-container .img-martin {
+  grid-area: img-martin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.grid-container .img-martin img {
+  height: 450px;
+  border-radius: 50%;
+  padding: 3rem 0;
+}
+.grid-container .info-martin {
+  grid-area: info-martin;
+  display: flex;
+  align-items: center;
+  color: #1d1d1d;
+}
+.grid-container .info-martin ul {
+  padding: 0;
+}
+.grid-container .info-martin ul li {
+  list-style: none;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  margin-bottom: 0.2rem;
+  font-weight: bold;
+}
+.grid-container .info-martin ul .skills {
+  display: inline-block;
+  background-color: #737373;
+  color: white;
+  padding: 10px;
+  margin: 5px 5px 5px 0;
+  border-radius: 15px;
+}
+.grid-container .info-martin ul .skills:hover {
+  background-color: #19adf3;
+}
+.grid-container .convenios {
+  grid-area: convenios;
+  margin: 1.5rem 0;
+  max-width: 70%;
+}
+.grid-container .convenios ul {
+  padding: 0;
+}
+.grid-container .convenios ul li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  gap: 15px;
+}
+.grid-container .convenios ul li::before {
+  content: "";
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-image: url(../img/logos/tick-verde.jpg);
+  background-size: cover;
+}
+.grid-container .convenios ul p {
+  margin: 20px 0;
+  font-size: 1.2rem;
+}
+.grid-container .garantias {
+  grid-area: garantias;
+  max-width: 70%;
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  font-size: 1.2rem;
+}
+.grid-container .garantias span {
+  color: #19adf3;
+  font-weight: bold;
+}
+.grid-container .garantias .aclaracion {
+  font-size: 1rem;
+}
+.grid-container .info-martin h2,
+.grid-container .convenios h2,
+.grid-container .garantias h2 {
+  font-size: 1.8rem;
+  color: #19adf3;
+}
+
+.img-pie {
+  height: 15rem;
+  background-image: url(../img/local/Plus-Optica-2-a.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.img-pie h3 {
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  height: 100%;
+  color: transparent;
+}
+
+/* ------- PAGE 2 - SERVICIOS ------- */
+.menu-productos {
+  width: 100%;
+  padding: 0 10%;
+  position: sticky;
+  top: 142px;
+  background-color: white;
+}
+.menu-productos .navbar {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.menu-productos .navbar img {
+  height: 80px;
 }
 
 .contenedor-producto {
-	margin: 3rem 10%;
+  margin: 3rem 10%;
 }
-
 .contenedor-producto p {
-	max-width: 80%;
+  max-width: 80%;
 }
-
-.tick-verde {
-	list-style: none;
-	padding-left: .5rem;
+.contenedor-producto .tick-verde {
+  list-style: none;
+  padding-left: 0.5rem;
 }
-
-.tick-verde li::before {
-	content: '';
-	display: inline-block;
-	height: 23px;
-	width: 23px;
-	background-image: url(../img/logos/tick-verde.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
-	margin-right: .5rem;
-	vertical-align: middle;
+.contenedor-producto .tick-verde li::before {
+  content: "";
+  display: inline-block;
+  height: 23px;
+  width: 23px;
+  background-image: url(../img/logos/tick-verde.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-right: 0.5rem;
+  vertical-align: middle;
 }
-
+.contenedor-producto .grid {
+  margin: 3rem 0;
+  display: inline-block;
+}
+.contenedor-producto .grid p {
+  max-width: 100%;
+}
 .contenedor-producto .img {
-	display: block;
-	width: 100%;
-	height: auto;
-	margin: 3rem auto;
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 3rem auto;
 }
 
-.grid {
-	margin: 3rem 0;
-	display: inline-block;
-}
-
-.grid p {
-	max-width: 100%;
-}
-
-.categoria div img {
-	padding: .5rem;
-}
 /* ------------ CATÁLOGO ------------ */
-
 .buscador {
-	margin: 0 10%;
+  margin: 0 10%;
 }
-
 .buscador h3 {
-	margin-top: 2rem;
+  margin-top: 2rem;
 }
 
 .contenedor-catalogo {
-	margin: 3rem 10%;
+  margin: 3rem 10%;
 }
-
 .contenedor-catalogo img {
-	width: 200px;
+  width: 200px;
 }
-
-
-
 
 /* ------------ RESERVAS ------------ */
-
 .reserva-form {
-	width: 480px;
-	height: 700px;
-	color: #1d1d1d;
-	font-size: 1.4rem;
-	margin: 0 auto;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 1.5rem;
-	transition: all 4s ease;
-	animation-direction: alternate;
-	animation-name: form;
-	animation-duration: 24s;
-	animation-iteration-count: infinite;
-	animation-play-state: running;
-} 
-@keyframes form {
-	0% {
-		background-image: url(../img/modelos/movil/form/photo151486.jpg);
-	}20%{
-		background-image: url(../img/modelos/movil/form/photo150276.jpg);
-	}40%{
-		background-image: url(../img/modelos/movil/form/photo148501.jpg);
-	}60%{
-		background-image: url(../img/modelos/movil/form/photo151936.jpg);
-	}80%{
-		background-image: url(../img/modelos/movil/form/photo153028.jpg);
-	}100%{
-		background-image: url(../img/modelos/movil/form/photo153083.jpg);
-	}
-	}
+  width: 480px;
+  height: 700px;
+  color: #1d1d1d;
+  font-size: 1.4rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  transition: all 4s ease;
+  animation-direction: alternate;
+  animation-name: form;
+  animation-duration: 24s;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
 .reserva-form h2 {
-	color: #1d1d1dbf;
-	font-size: 4rem;
-	border-radius: 30px;
-	margin-top: 2rem;
-	padding: 1rem 1.5rem;
-	background-color: rgba(255, 255, 255, 0.624);
+  color: rgba(29, 29, 29, 0.7490196078);
+  font-size: 4rem;
+  border-radius: 30px;
+  margin-top: 2rem;
+  padding: 1rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.624);
 }
-
 .reserva-form input {
-	width: 50%;
-	font-size: 1.4rem;
-	padding: .8rem;
-	background-color: rgba(255, 255, 255, 0.624);
-	border: none;
-	border-radius: 50px;
-	text-align: center;
+  width: 50%;
+  font-size: 1.4rem;
+  padding: 0.8rem;
+  background-color: rgba(255, 255, 255, 0.624);
+  border: none;
+  border-radius: 50px;
+  text-align: center;
 }
-
+.reserva-form input::-moz-placeholder {
+  color: #1d1d1d;
+}
 .reserva-form input::placeholder {
-	color: #1d1d1d;
+  color: #1d1d1d;
 }
 
+@keyframes form {
+  0% {
+    background-image: url(../img/modelos/movil/form/photo151486.jpg);
+  }
+  20% {
+    background-image: url(../img/modelos/movil/form/photo150276.jpg);
+  }
+  40% {
+    background-image: url(../img/modelos/movil/form/photo148501.jpg);
+  }
+  60% {
+    background-image: url(../img/modelos/movil/form/photo151936.jpg);
+  }
+  80% {
+    background-image: url(../img/modelos/movil/form/photo153028.jpg);
+  }
+  100% {
+    background-image: url(../img/modelos/movil/form/photo153083.jpg);
+  }
+}
 /* ------------ FOOTER ------------ */
-
 footer {
-	background-color: #1d1d1d;
-	width: 100%;
-	padding: 3rem;
-	margin-top: auto;
-	display: flex;
-	justify-content: center;
-	gap: 4rem;
+  background-color: #1d1d1d;
+  width: 100%;
+  padding: 3rem;
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
 }
-.col-footer {
-	color: #a8a8a8;
-	font-weight: 400;	
+footer .col-footer {
+  color: #a8a8a8;
+  font-weight: 400;
 }
-.col-footer h3 {
-	font-weight: 700;
-	font-size: 1.3rem;
+footer .col-footer h3 {
+  font-weight: 700;
+  font-size: 1.3rem;
 }
-.col-footer li {
-	list-style: none;
-	line-height: 23px;
+footer .col-footer li {
+  list-style: none;
+  line-height: 23px;
 }
-.col-footer a {
-	color: #a8a8a8;
-	font-weight: 400;
+footer .col-footer a {
+  color: #a8a8a8;
+  font-weight: 400;
 }
 
 /* ------------ RESPONSIVE ------------ */
-
 @media (max-width: 1250px) {
-	nav .links {
-		display: none;
-	}
-	nav .toggle-btn {
-		display: block;
-
-	}
-	nav .desplegable {
-		display: block;
-		right: 9%;
-	}
-	nav {
-		padding: 0 5%;
-	}
-	.redes-sociales {
-		padding: .5rem 5%;
-	}
-	.grid-container {
-		grid-template-columns: 5% 1fr 1fr 5%;
-		grid-template-rows: auto auto auto auto auto;	
-		grid-template-areas:
-			".	   info		 			 info	   			  ."
-			".	 img-martin		 img-martin	      ."
-			".	 info-martin	 info-martin	  	."
-			".		convenios			convenios			  ."
-			".		garantias			garantias			  ."
-		;
-	}
-	.data h2 {
-		text-align: left;
-	}
-	.descripcion {
-		background-repeat: repeat-y;
-	}
-
+  header nav {
+    padding: 0 5%;
+  }
+  header nav .links {
+    display: none;
+  }
+  header nav .toggle-btn {
+    display: block;
+  }
+  header nav .desplegable {
+    display: block;
+    right: 9%;
+  }
+  .redes-sociales {
+    padding: 0.5rem 5%;
+  }
+  .grid-container {
+    grid-template-columns: 5% 1fr 1fr 5%;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas: ".    info          info          ." ".    img-martin    img-martin    ." ".    info-martin   info-martin   ." ".    convenios     convenios     ." ".    garantias			garantias     .";
+  }
+  .grid-container .descripcion {
+    background-repeat: repeat-y;
+  }
+  .grid-container .data h2 {
+    text-align: left;
+  }
 }
-
 @media (max-width: 920px) {
-	footer {
-		display: inline-block;
-	}
-	footer ul {
-		margin: 1.5rem;
-	}	
+  footer {
+    display: inline-block;
+  }
+  footer ul {
+    margin: 1.5rem;
+  }
 }
-
 @media (max-width: 576px) {
-	nav .desplegable {
-		left: 5%;
-		right: 5%;
-		top: 90px;
-		width: 90%;
-	}
-	.inicio-movil {
-		animation-name: inicio-movil;
-	}	
-	@keyframes inicio-movil {
-		0% {
-			background-image: url(../img/modelos/movil/index/photo152002.jpg);
-		}20%{
-			background-image: url(../img/modelos/movil/index/photo161837.jpg);
-		}40%{
-			background-image: url(../img/modelos/movil/index/photo150663.jpg);
-		}60%{
-			background-image: url(../img/modelos/movil/index/photo154836.jpg);
-		}80%{
-			background-image: url(../img/modelos/movil/index/photo153343.jpg);
-		}100%{
-			background-image: url(../img/modelos/movil/index/photo150413.jpg);
-	}
-	}	
-	.grid-container {
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: auto auto auto auto auto;
-		align-items: center;	
-		grid-template-areas:
-			"	   info		 			 info	   			"
-			"	 img-martin		 img-martin	    "
-			"	 info-martin		 info-martin	"
-			"		convenios			convenios			"
-			"		garantias			garantias			"
-		;
-	}
-	.data {
-		padding: 1.4rem;
-	}
-	.convenios,
-	.garantias {
-		padding: 0 5%;
-		max-width: 100%;
-		text-align: justify;
-	}
-	.info-martin {
-		padding: 0 5%;
-	}
-	.reserva-form {
-		width: 100%;
-		border-radius: 0;
-	}
-	.btn-wpp {
-		display: none;
-	}
-}
+  .inicio-movil {
+    animation-name: inicio-movil;
+  }
+  @keyframes inicio-movil {
+    0% {
+      background-image: url(../img/modelos/movil/index/photo152002.jpg);
+    }
+    20% {
+      background-image: url(../img/modelos/movil/index/photo161837.jpg);
+    }
+    40% {
+      background-image: url(../img/modelos/movil/index/photo150663.jpg);
+    }
+    60% {
+      background-image: url(../img/modelos/movil/index/photo154836.jpg);
+    }
+    80% {
+      background-image: url(../img/modelos/movil/index/photo153343.jpg);
+    }
+    100% {
+      background-image: url(../img/modelos/movil/index/photo150413.jpg);
+    }
+  }
+  header nav .desplegable {
+    left: 5%;
+    right: 5%;
+    top: 90px;
+    width: 90%;
+  }
+  .btn-wpp {
+    display: none;
+  }
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    align-items: center;
+    grid-template-areas: "   info          info        " "   img-martin    img-martin  " "   info-martin   info-martin " "   convenios     convenios   " "   garantias     garantias   ";
+  }
+  .grid-container .data {
+    padding: 1.4rem;
+  }
+  .grid-container .info-martin {
+    padding: 0 5%;
+  }
+  .grid-container .convenios,
+  .grid-container .garantias {
+    padding: 0 5%;
+    max-width: 100%;
+    text-align: justify;
+  }
+  .reserva-form {
+    width: 100%;
+    border-radius: 0;
+  }
+}/*# sourceMappingURL=style.css.map */

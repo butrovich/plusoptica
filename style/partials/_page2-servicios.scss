@@ -1,0 +1,59 @@
+/* ------- PAGE 2 - SERVICIOS ------- */
+.menu-productos {
+	width: 100%;
+	padding: 0 10%;
+	position: sticky;
+	top: 142px;
+	background-color: white;
+
+  .navbar {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+
+    img {
+      height: 80px;
+    }    
+  }
+}
+
+.contenedor-producto {
+	margin: 3rem 10%;
+
+  p {
+    max-width: 80%;
+  }
+
+  .tick-verde {
+    list-style: none;
+    padding-left: .5rem;
+
+    li::before {
+      content: '';
+      display: inline-block;
+      height: 23px;
+      width: 23px;
+      background-image: url(../img/logos/tick-verde.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin-right: .5rem;
+      vertical-align: middle;
+    }
+  }
+
+  .grid {
+    margin: 3rem 0;
+    display: inline-block;
+
+    p {
+      max-width: 100%;
+    }
+  }
+
+  .img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 3rem auto;
+  }
+}

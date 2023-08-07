@@ -1,0 +1,30 @@
+/* ------------ FOOTER ------------ */
+footer {
+	background-color: #1d1d1d;
+	width: 100%;
+	padding: 3rem;
+	margin-top: auto;
+	display: flex;
+	justify-content: center;
+	gap: 4rem;
+
+  .col-footer {
+    color: #a8a8a8;
+    font-weight: 400;
+
+    h3 {
+      font-weight: 700;
+      font-size: 1.3rem;
+    }
+
+    li {
+      list-style: none;
+      line-height: 23px;
+    }
+
+    a {
+      color: #a8a8a8;
+      font-weight: 400;
+    }
+  }
+}

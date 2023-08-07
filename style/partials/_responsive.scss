@@ -1,0 +1,126 @@
+/* ------------ RESPONSIVE ------------ */
+@media (max-width: 1250px) {
+	header {
+    nav {
+      padding: 0 5%;
+  
+      .links {
+        display: none;
+      }
+  
+      .toggle-btn {
+        display: block;  
+      }
+  
+      .desplegable {
+        display: block;
+        right: 9%;
+      }
+    }
+  }
+
+	.redes-sociales {
+		padding: .5rem 5%;
+	}
+
+	.grid-container {
+		grid-template-columns: 5% 1fr 1fr 5%;
+		grid-template-rows: auto auto auto auto auto;	
+		grid-template-areas:
+			".    info          info          ."
+			".    img-martin    img-martin    ."
+			".    info-martin   info-martin   ."
+			".    convenios     convenios     ."
+			".    garantias			garantias     ."
+		;
+
+    .descripcion {
+      background-repeat: repeat-y;
+    }
+
+    .data {
+      h2 {
+        text-align: left;
+      }
+    } 
+	}
+}
+
+@media (max-width: 920px) {
+	footer {
+		display: inline-block;
+
+    ul {
+      margin: 1.5rem;
+    }	
+	}
+}
+
+@media (max-width: 576px) {
+  .inicio-movil {
+		animation-name: inicio-movil;
+	}	
+	@keyframes inicio-movil {
+		0% {
+			background-image: url(../img/modelos/movil/index/photo152002.jpg);
+		}20%{
+			background-image: url(../img/modelos/movil/index/photo161837.jpg);
+		}40%{
+			background-image: url(../img/modelos/movil/index/photo150663.jpg);
+		}60%{
+			background-image: url(../img/modelos/movil/index/photo154836.jpg);
+		}80%{
+			background-image: url(../img/modelos/movil/index/photo153343.jpg);
+		}100%{
+			background-image: url(../img/modelos/movil/index/photo150413.jpg);
+	  }
+	}
+
+  header {
+    nav {
+      .desplegable {
+        left: 5%;
+        right: 5%;
+        top: 90px;
+        width: 90%;
+      }
+    }
+  } 
+
+  .btn-wpp {
+		display: none;
+	}
+
+  .grid-container {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto auto auto auto auto;
+		align-items: center;	
+		grid-template-areas:
+			"   info          info        "
+			"   img-martin    img-martin  "
+			"   info-martin   info-martin "
+			"   convenios     convenios   "
+			"   garantias     garantias   "
+		;
+
+    .data {
+      padding: 1.4rem;
+    }
+
+    .info-martin {
+      padding: 0 5%;
+    }
+
+    .convenios,
+	  .garantias {
+		padding: 0 5%;
+		max-width: 100%;
+		text-align: justify;
+	}
+	}
+
+  .reserva-form {
+		width: 100%;
+		border-radius: 0;
+	}
+}
