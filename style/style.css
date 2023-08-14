@@ -42,40 +42,6 @@ a:focus-visible {
 }
 
 /* ------- HEADER & NAVBAR ------- */
-.inicio-web {
-  width: 100%;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  transition: all 4s ease;
-  animation-direction: alternate;
-  animation-name: inicio-web;
-  animation-duration: 24s;
-  animation-iteration-count: infinite;
-  animation-play-state: running;
-}
-
-@keyframes inicio-web {
-  0% {
-    background-image: url(../img/modelos/desk/photo154691.jpg);
-  }
-  20% {
-    background-image: url(../img/modelos/desk/photo152293.jpg);
-  }
-  40% {
-    background-image: url(../img/modelos/desk/photo151535.jpg);
-  }
-  60% {
-    background-image: url(../img/modelos/desk/photo151493.jpg);
-  }
-  80% {
-    background-image: url(../img/modelos/desk/photo149568.jpg);
-  }
-  100% {
-    background-image: url(../img/modelos/desk/photo149569.jpg);
-  }
-}
 .header {
   background-image: url(../img/gafas/photo147349.jpg);
   background-repeat: no-repeat;
@@ -85,6 +51,10 @@ a:focus-visible {
   z-index: 5;
 }
 
+header {
+  position: absolute;
+  width: 100%;
+}
 header nav {
   height: 110px;
   width: 100%;
@@ -150,7 +120,6 @@ header nav .desplegable {
 header nav .desplegable.open {
   height: 300px;
   text-align: center;
-  z-index: 100;
 }
 header nav .desplegable ul {
   padding: 0;
@@ -228,7 +197,7 @@ header nav .desplegable ul li a:hover {
   position: sticky;
   top: 110px;
   padding: 0.5rem 10%;
-  z-index: 2;
+  z-index: 4;
 }
 .redes-sociales .button {
   display: flex;
@@ -263,6 +232,11 @@ header nav .desplegable ul li a:hover {
   color: #19d354;
   background: white;
   scale: 1.1;
+}
+
+/* ------- INDEX ------- */
+.inicio-movil {
+  display: none;
 }
 
 /* ------- PAGE 1 - NOSOTROS ------- */
@@ -483,33 +457,31 @@ header nav .desplegable ul li a:hover {
 }
 
 /* ------------ RESERVAS ------------ */
-.reserva-form {
-  width: 480px;
-  height: 700px;
+.contenedor-reserva {
+  width: 100%;
+  display: flex;
+  justify-content: center;
   color: #1d1d1d;
   font-size: 1.4rem;
-  margin: 0 auto;
+}
+.contenedor-reserva .reserva-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
-  transition: all 4s ease;
-  animation-direction: alternate;
-  animation-name: form;
-  animation-duration: 24s;
-  animation-iteration-count: infinite;
-  animation-play-state: running;
+  position: absolute;
+  z-index: 3;
+  margin-top: 3.5rem;
 }
-.reserva-form h2 {
-  color: rgba(29, 29, 29, 0.7490196078);
+.contenedor-reserva .reserva-form h2 {
   font-size: 4rem;
   border-radius: 30px;
   margin-top: 2rem;
   padding: 1rem 1.5rem;
   background-color: rgba(255, 255, 255, 0.624);
 }
-.reserva-form input {
-  width: 50%;
+.contenedor-reserva .reserva-form input {
+  width: 80%;
   font-size: 1.4rem;
   padding: 0.8rem;
   background-color: rgba(255, 255, 255, 0.624);
@@ -517,33 +489,18 @@ header nav .desplegable ul li a:hover {
   border-radius: 50px;
   text-align: center;
 }
-.reserva-form input::-moz-placeholder {
+.contenedor-reserva .reserva-form input::-moz-placeholder {
   color: #1d1d1d;
 }
-.reserva-form input::placeholder {
+.contenedor-reserva .reserva-form input::placeholder {
   color: #1d1d1d;
 }
 
-@keyframes form {
-  0% {
-    background-image: url(../img/modelos/movil/form/photo151486.jpg);
-  }
-  20% {
-    background-image: url(../img/modelos/movil/form/photo150276.jpg);
-  }
-  40% {
-    background-image: url(../img/modelos/movil/form/photo148501.jpg);
-  }
-  60% {
-    background-image: url(../img/modelos/movil/form/photo151936.jpg);
-  }
-  80% {
-    background-image: url(../img/modelos/movil/form/photo153028.jpg);
-  }
-  100% {
-    background-image: url(../img/modelos/movil/form/photo153083.jpg);
-  }
+.fondo {
+  width: 480px;
+  margin: 0 auto;
 }
+
 /* ------------ FOOTER ------------ */
 footer {
   background-color: #1d1d1d;
@@ -602,6 +559,12 @@ footer .col-footer a {
   }
 }
 @media (max-width: 920px) {
+  .inicio-web {
+    display: none;
+  }
+  .inicio-movil {
+    display: contents;
+  }
   footer {
     display: inline-block;
   }
@@ -610,29 +573,6 @@ footer .col-footer a {
   }
 }
 @media (max-width: 576px) {
-  .inicio-movil {
-    animation-name: inicio-movil;
-  }
-  @keyframes inicio-movil {
-    0% {
-      background-image: url(../img/modelos/movil/index/photo152002.jpg);
-    }
-    20% {
-      background-image: url(../img/modelos/movil/index/photo161837.jpg);
-    }
-    40% {
-      background-image: url(../img/modelos/movil/index/photo150663.jpg);
-    }
-    60% {
-      background-image: url(../img/modelos/movil/index/photo154836.jpg);
-    }
-    80% {
-      background-image: url(../img/modelos/movil/index/photo153343.jpg);
-    }
-    100% {
-      background-image: url(../img/modelos/movil/index/photo150413.jpg);
-    }
-  }
   header nav .desplegable {
     left: 5%;
     right: 5%;
@@ -660,8 +600,7 @@ footer .col-footer a {
     max-width: 100%;
     text-align: justify;
   }
-  .reserva-form {
+  .fondo {
     width: 100%;
-    border-radius: 0;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -47,6 +47,14 @@
 }
 
 @media (max-width: 920px) {
+	.inicio-web {
+		display: none;
+	}
+	
+  .inicio-movil {
+		display: contents;
+	}
+	
 	footer {
 		display: inline-block;
 
@@ -57,25 +65,6 @@
 }
 
 @media (max-width: 576px) {
-  .inicio-movil {
-		animation-name: inicio-movil;
-	}	
-	@keyframes inicio-movil {
-		0% {
-			background-image: url(../img/modelos/movil/index/photo152002.jpg);
-		}20%{
-			background-image: url(../img/modelos/movil/index/photo161837.jpg);
-		}40%{
-			background-image: url(../img/modelos/movil/index/photo150663.jpg);
-		}60%{
-			background-image: url(../img/modelos/movil/index/photo154836.jpg);
-		}80%{
-			background-image: url(../img/modelos/movil/index/photo153343.jpg);
-		}100%{
-			background-image: url(../img/modelos/movil/index/photo150413.jpg);
-	  }
-	}
-
   header {
     nav {
       .desplegable {
@@ -119,8 +108,7 @@
 	}
 	}
 
-  .reserva-form {
-		width: 100%;
-		border-radius: 0;
-	}
+  .fondo {
+    width: 100%;
+  }
 }
