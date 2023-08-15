@@ -77,7 +77,7 @@ header nav {
 header nav img {
   height: 60px;
   vertical-align: middle;
-  transition: all 300ms;
+  transition: all 300ms ease;
 }
 header nav img:hover {
   scale: 1.15;
@@ -234,6 +234,11 @@ header nav .desplegable ul li a:hover {
 @media screen and (max-width: 1250px) {
   .redes-sociales {
     padding: 0.5rem 5%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .redes-sociales {
+    justify-content: center;
   }
 }
 .redes-sociales .button {
@@ -539,18 +544,87 @@ header nav .desplegable ul li a:hover {
 }
 
 /* ------------ CATÁLOGO ------------ */
-.buscador {
-  margin: 0 10%;
+.grid-catalogo {
+  display: grid;
+  margin: 2rem 10%;
+  gap: 4rem;
+  grid-template-columns: 2fr 0.6fr;
+  grid-template-areas: "productos    search";
 }
-.buscador h3 {
+@media screen and (max-width: 576px) {
+  .grid-catalogo {
+    grid-template-columns: 1fr;
+    grid-template-areas: "search" "productos";
+  }
+}
+.grid-catalogo .buscador {
+  grid-area: search;
+}
+@media screen and (max-width: 576px) {
+  .grid-catalogo .buscador {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .grid-catalogo .buscador input::-moz-placeholder {
+    text-align: center;
+  }
+  .grid-catalogo .buscador input::placeholder {
+    text-align: center;
+  }
+}
+.grid-catalogo .buscador h3 {
   margin-top: 2rem;
 }
-
-.contenedor-catalogo {
-  margin: 3rem 10%;
+@media screen and (max-width: 576px) {
+  .grid-catalogo .buscador h3 {
+    margin-top: 1rem;
+  }
 }
-.contenedor-catalogo img {
+.grid-catalogo .buscador ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+@media screen and (max-width: 576px) {
+  .grid-catalogo .buscador ul {
+    text-align: center;
+  }
+}
+.grid-catalogo .buscador a {
+  text-decoration: none;
+  color: #1d1d1d;
+}
+.grid-catalogo .buscador a:hover {
+  color: #19adf3;
+}
+.grid-catalogo .contenedor-catalogo {
+  grid-area: productos;
+}
+@media screen and (max-width: 576px) {
+  .grid-catalogo .contenedor-catalogo h4 {
+    text-align: center;
+  }
+}
+.grid-catalogo .contenedor-catalogo .fila-catalogo {
+  display: flex;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+@media screen and (max-width: 920px) {
+  .grid-catalogo .contenedor-catalogo .fila-catalogo {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.grid-catalogo .contenedor-catalogo .fila-catalogo .caja-producto img {
   width: 200px;
+}
+@media screen and (max-width: 576px) {
+  .grid-catalogo .contenedor-catalogo .fila-catalogo .caja-producto {
+    margin: 1.5rem 0;
+  }
 }
 
 /* ------------ RESERVAS ------------ */

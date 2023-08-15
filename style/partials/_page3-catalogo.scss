@@ -1,16 +1,93 @@
 /* ------------ CATÁLOGO ------------ */
-.buscador {
-	margin: 0 10%;
+.grid-catalogo {
+  display: grid;
+  margin: 2rem 10%;
+  gap: 4rem;
+  grid-template-columns: 2fr .6fr;
 
-  h3 {
-    margin-top: 2rem;
+  grid-template-areas:
+    "productos    search"
+  ;
+
+  @include movil {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "search"
+    "productos"
+    ;
+  }
+  
+  .buscador {	
+    grid-area: search;
+    
+    @include movil {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      input::placeholder {
+        text-align: center;
+      }
+    }
+
+    h3 {
+      margin-top: 2rem;
+
+      @include movil {
+        margin-top: 1rem;
+      }
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      @include movil {
+        text-align: center;
+      }
+    }
+    
+    a {
+      text-decoration: none;
+      color: $fontColor;
+
+      &:hover {
+        color: $mainColor;
+      }
+    }
+  }
+  
+  .contenedor-catalogo {
+    grid-area: productos;
+
+    @include movil {
+      h4 {
+        text-align: center;
+      }
+    }
+    
+    .fila-catalogo {
+      display: flex;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    
+      @include tablet {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .caja-producto {
+        img {
+          width: 200px;
+        }
+
+        @include movil {
+          margin: 1.5rem 0;
+        }
+      }
+    }
   }
 }
 
-.contenedor-catalogo {
-	margin: 3rem 10%;
-
-  img {
-    width: 200px;
-  }
-}

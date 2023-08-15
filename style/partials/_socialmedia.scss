@@ -59,6 +59,10 @@
     padding: .5rem 5%;
   }
 
+  @include movil {
+    justify-content: center;
+  }
+
   .button {
     display: flex;
     align-items: center;
