@@ -8,6 +8,10 @@ footer {
 	justify-content: center;
 	gap: 4rem;
 
+  @include tablet {
+    display: inline-block;
+  }
+
   .col-footer {
     color: #a8a8a8;
     font-weight: 400;
@@ -15,6 +19,12 @@ footer {
     h3 {
       font-weight: 700;
       font-size: 1.3rem;
+    }
+
+    ul {
+      @include tablet {
+        margin: 1.5rem;
+      }
     }
 
     li {

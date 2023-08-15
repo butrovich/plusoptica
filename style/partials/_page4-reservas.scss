@@ -42,4 +42,8 @@
 .fondo {
 	width: 480px;
 	margin: 0 auto;
+
+	@include movil {
+		width: 100%;
+	}
 }

@@ -1,5 +1,14 @@
 /* ------- INDEX ------- */
+.inicio-web {
+  @include tablet {
+    display: none;
+  }
+}
 
 .inicio-movil {
   display: none;
+
+  @include tablet {
+    display: contents;
+  }
 }
