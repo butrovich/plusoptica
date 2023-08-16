@@ -548,7 +548,7 @@ header nav .desplegable ul li a:hover {
   display: grid;
   margin: 2rem 10%;
   gap: 4rem;
-  grid-template-columns: 2fr 0.6fr;
+  grid-template-columns: 1.5fr 1fr;
   grid-template-areas: "productos    search";
 }
 @media screen and (max-width: 576px) {
@@ -559,6 +559,14 @@ header nav .desplegable ul li a:hover {
 }
 .grid-catalogo .buscador {
   grid-area: search;
+  border-left: solid 0.1rem #1d1d1d;
+  padding-left: 2.5rem;
+}
+@media screen and (max-width: 920px) {
+  .grid-catalogo .buscador {
+    border-left: 0;
+    padding-left: 0;
+  }
 }
 @media screen and (max-width: 576px) {
   .grid-catalogo .buscador {
@@ -607,24 +615,35 @@ header nav .desplegable ul li a:hover {
     text-align: center;
   }
 }
-.grid-catalogo .contenedor-catalogo .fila-catalogo {
+.grid-catalogo .contenedor-catalogo .categoria h4 {
+  font-size: 2rem;
+}
+.grid-catalogo .contenedor-catalogo .categoria .fila-catalogo {
   display: flex;
   gap: 1.5rem;
   margin: 1.5rem 0;
 }
 @media screen and (max-width: 920px) {
-  .grid-catalogo .contenedor-catalogo .fila-catalogo {
+  .grid-catalogo .contenedor-catalogo .categoria .fila-catalogo {
     flex-direction: column;
     align-items: center;
   }
 }
-.grid-catalogo .contenedor-catalogo .fila-catalogo .caja-producto img {
-  width: 200px;
-}
 @media screen and (max-width: 576px) {
-  .grid-catalogo .contenedor-catalogo .fila-catalogo .caja-producto {
+  .grid-catalogo .contenedor-catalogo .categoria .fila-catalogo .caja-producto {
     margin: 1.5rem 0;
   }
+}
+.grid-catalogo .contenedor-catalogo .categoria .fila-catalogo .caja-producto h5 {
+  max-width: 200px;
+  text-align: center;
+}
+.grid-catalogo .contenedor-catalogo .categoria .fila-catalogo .caja-producto p {
+  max-width: 200px;
+  text-align: center;
+}
+.grid-catalogo .contenedor-catalogo .categoria .fila-catalogo .caja-producto img {
+  width: 200px;
 }
 
 /* ------------ RESERVAS ------------ */
