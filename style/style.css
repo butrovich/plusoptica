@@ -282,6 +282,13 @@ header nav .desplegable ul li a:hover {
 }
 
 /* ------- INDEX ------- */
+.page-title {
+  color: transparent;
+  background-color: transparent;
+  position: absolute;
+  z-index: -1;
+}
+
 @media screen and (max-width: 920px) {
   .inicio-web {
     display: none;

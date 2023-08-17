@@ -1,4 +1,11 @@
 /* ------- INDEX ------- */
+.page-title {
+  color: transparent;
+  background-color:transparent;
+  position: absolute;
+  z-index: -1;
+}
+
 .inicio-web {
   @include tablet {
     display: none;
