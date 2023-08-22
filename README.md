@@ -5,7 +5,7 @@
 
 ------------
 
-> Este es un proyecto para el curso de Desarrollo Web de **CODERHOUSE**  y su finalidad es poner en práctica y mostrar los conocimientos obtenidos.
+> Este es un proyecto para el curso de Desarrollo Web de ***CODERHOUSE***  y su finalidad es poner en práctica y mostrar los conocimientos obtenidos.
 
 ### Composición
 1. index
@@ -16,7 +16,7 @@
 
 ------------
 
-El sitio web cumple con lo siguiente:
+## El sitio web cumple con lo siguiente:
 > - Estructura HTML
 > - Modelado en CSS
 > - Flexbox 
