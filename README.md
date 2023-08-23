@@ -1,4 +1,5 @@
-![](https://valebutrico.github.io/plusoptica/img/logos/logo-completo.png)
+[![](https://valebutrico.github.io/plusoptica/img/logos/logo-completo.png)](https://valebutrico.github.io/plusoptica/)
+
 
 😍 👌 👓 **Web de Plus Óptica. Aquí podrás conocer un poco más sobre la clínica, nuestros productos y hasta agendar una consulta!** 👓 👌 😍
 

@@ -42,6 +42,49 @@ a:focus-visible {
   margin: 3rem auto;
 }
 
+/* ------- OBJETOS DE ANIMISTA ------- */
+.fade-in-top {
+  animation: fade-in-top 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+.slide-in-left {
+  animation: slide-in-left 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s both;
+}
+
+.slide-in-right {
+  animation: slide-in-right 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s both;
+}
+
+@keyframes fade-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 /* ------- HEADER & NAVBAR ------- */
 .header {
   background-image: url(../img/gafas/photo147349.jpg);
@@ -69,7 +112,7 @@ header nav {
   position: relative;
   z-index: 5;
 }
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1450px) {
   header nav {
     padding: 0 5%;
   }
@@ -78,6 +121,7 @@ header nav img {
   height: 60px;
   vertical-align: middle;
   transition: all 300ms ease;
+  animation-delay: 1.6s;
 }
 header nav img:hover {
   scale: 1.15;
@@ -91,7 +135,7 @@ header nav .links {
   align-items: center;
   text-align: center;
 }
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1450px) {
   header nav .links {
     display: none;
   }
@@ -118,7 +162,7 @@ header nav .toggle-btn {
   cursor: pointer;
   display: none;
 }
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1450px) {
   header nav .toggle-btn {
     display: block;
   }
@@ -135,7 +179,7 @@ header nav .desplegable {
   overflow: hidden;
   transition: height 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1450px) {
   header nav .desplegable {
     display: block;
     right: 9%;
@@ -231,7 +275,7 @@ header nav .desplegable ul li a:hover {
   padding: 0.5rem 10%;
   z-index: 4;
 }
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1450px) {
   .redes-sociales {
     padding: 0.5rem 5%;
   }
@@ -314,7 +358,7 @@ header nav .desplegable ul li a:hover {
   align-items: center;
   grid-template-areas: ".    info          info          ." ".    img-martin    info-martin   ." ".    convenios     convenios     ." ".    garantias     garantias     .";
 }
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1450px) {
   .grid-container {
     grid-template-columns: 5% 1fr 1fr 5%;
     grid-template-rows: auto auto auto auto auto;
@@ -339,7 +383,7 @@ header nav .desplegable ul li a:hover {
   background-size: 100% auto;
   background-position: center;
 }
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1450px) {
   .grid-container .descripcion {
     background-repeat: repeat-y;
   }
@@ -555,11 +599,13 @@ header nav .desplegable ul li a:hover {
   display: grid;
   margin: 2rem 10%;
   gap: 4rem;
+  transition: all 300ms;
   grid-template-columns: 1.5fr 1fr;
   grid-template-areas: "productos    search";
 }
 @media screen and (max-width: 576px) {
   .grid-catalogo {
+    transition: all 300ms;
     grid-template-columns: 1fr;
     grid-template-areas: "search" "productos";
   }
@@ -625,10 +671,16 @@ header nav .desplegable ul li a:hover {
 .grid-catalogo .contenedor-catalogo .categoria h4 {
   font-size: 2rem;
 }
+@media screen and (max-width: 1450px) {
+  .grid-catalogo .contenedor-catalogo .categoria h4 {
+    text-align: center;
+  }
+}
 .grid-catalogo .contenedor-catalogo .categoria .fila-catalogo {
   display: flex;
   gap: 1.5rem;
   margin: 1.5rem 0;
+  transition: all 300ms;
 }
 @media screen and (max-width: 920px) {
   .grid-catalogo .contenedor-catalogo .categoria .fila-catalogo {
@@ -637,20 +689,53 @@ header nav .desplegable ul li a:hover {
   }
 }
 @media screen and (max-width: 576px) {
-  .grid-catalogo .contenedor-catalogo .categoria .fila-catalogo .caja-producto {
-    margin: 1.5rem 0;
+  .grid-catalogo .contenedor-catalogo .categoria .fila-catalogo {
+    gap: 0;
+    margin: 0;
   }
 }
-.grid-catalogo .contenedor-catalogo .categoria .fila-catalogo .caja-producto h5 {
-  max-width: 200px;
-  text-align: center;
+.grid-catalogo .contenedor-catalogo .categoria .fila-catalogo .caja-producto {
+  min-width: 300px;
+  border-radius: 15px;
+  transition: all 300ms;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-.grid-catalogo .contenedor-catalogo .categoria .fila-catalogo .caja-producto p {
-  max-width: 200px;
-  text-align: center;
+.grid-catalogo .contenedor-catalogo .categoria .fila-catalogo .caja-producto:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  transform: scale(1.02) translateY(-20px);
+}
+@media screen and (max-width: 1450px) {
+  .grid-catalogo .contenedor-catalogo .categoria .fila-catalogo .caja-producto {
+    min-width: 150px;
+    transition: all 300ms;
+  }
+}
+@media screen and (max-width: 576px) {
+  .grid-catalogo .contenedor-catalogo .categoria .fila-catalogo .caja-producto {
+    margin: 1rem 0;
+    transition: all 300ms;
+  }
 }
 .grid-catalogo .contenedor-catalogo .categoria .fila-catalogo .caja-producto img {
-  width: 200px;
+  width: 100%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.grid-catalogo .contenedor-catalogo .categoria .fila-catalogo .caja-producto .texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.grid-catalogo .contenedor-catalogo .categoria .fila-catalogo .caja-producto .texto h5 {
+  max-width: 200px;
+  text-align: center;
+  padding-top: 1rem;
+  margin: 0 0.5rem;
+}
+.grid-catalogo .contenedor-catalogo .categoria .fila-catalogo .caja-producto .texto p {
+  max-width: 200px;
+  text-align: center;
 }
 
 /* ------------ RESERVAS ------------ */

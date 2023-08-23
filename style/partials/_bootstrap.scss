@@ -19,3 +19,15 @@
 	justify-content: center;
 	margin: 3rem auto;
 }
+/* ------- OBJETOS DE ANIMISTA ------- */
+.fade-in-top{animation:fade-in-top .5s cubic-bezier(.39,.575,.565,1.000) both}
+
+.slide-in-left{animation:slide-in-left .3s cubic-bezier(.25,.46,.45,.94) .1s both}
+
+.slide-in-right{animation:slide-in-right .3s cubic-bezier(.25,.46,.45,.94) .1s both}
+
+@keyframes fade-in-top{0%{transform:translateY(-50px);opacity:0}100%{transform:translateY(0);opacity:1}}
+
+@keyframes slide-in-right{0%{transform:translateX(1000px);opacity:0}100%{transform:translateX(0);opacity:1}}
+
+@keyframes slide-in-left{0%{transform:translateX(-1000px);opacity:0}100%{transform:translateX(0);opacity:1}}
