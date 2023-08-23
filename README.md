@@ -25,5 +25,3 @@
 > - Variables, mixins y operadores de lenguaje SASS
 > - Animaciones AOS
 > - SEO - meta tags description, keywords y favicon
-
-
