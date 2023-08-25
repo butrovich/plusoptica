@@ -3,6 +3,7 @@
 	width: 100%;
 	padding: 0 10%;
 	position: sticky;
+  z-index: 5;
 	top: 142px;
 	background-color: white;
 
@@ -10,18 +11,104 @@
     display: flex;
     justify-content: center;
     gap: 1.5rem;
-
+    
+    @include movil {
+      gap: 1rem;
+    }
+    
     img {
+      transition: all 300ms;
       height: 80px;
+      margin: .5rem auto;
+      
+      &:hover {
+        scale: 1.1;
+      }
+      
+      @include movil {
+        height: 60px;
+      }
     }    
+  }
+}
+
+html {
+  scroll-padding-top: 260px;
+
+  @include movil {
+    scroll-padding-top: 240px;
+  }
+}
+
+.contenedor-carousel-galeria {
+  height: 65vh;
+  margin: 1rem;
+
+  @include movil {
+    margin: 0;
+  }
+
+  .carousel-inner {
+    max-width: 527px;
+
+    @include movil {
+      width: 100%;
+    }
+
+    .carousel-item {
+      img {
+        height: 65vh;
+      }
+    }
   }
 }
 
 .contenedor-producto {
 	margin: 3rem 10%;
 
+  h2 {
+    color: $mainColor;
+
+    @include movil {
+      text-align: center;
+    }
+  }
+
   p {
     max-width: 80%;
+
+    @include movil {
+      max-width: 100%;
+      text-align: center;      
+    }
+  }
+
+  span {
+    font-weight: bolder;
+  }
+  
+  .grid {
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: 150px auto;
+    row-gap: 1rem;
+    align-items: center;
+
+    @include movil {
+      grid-template-columns: auto;
+      text-align: center;
+    }
+
+    h3 {
+      font-style: italic;
+      font-size: x-large;
+      color: $mainColor;
+    }
+
+    p {
+      max-width: 100%;
+      margin: 0;
+    }
   }
 
   .tick-verde {
@@ -41,19 +128,16 @@
     }
   }
 
-  .grid {
-    margin: 3rem 0;
-    display: inline-block;
+  .zeiss,
+  .zeiss-sport {
 
-    p {
-      max-width: 100%;
+    img {
+      display: block;
+      margin: 2.5rem auto;
+
+      @include tablet {
+        width: 100%;
+      }
     }
-  }
-
-  .img {
-    display: block;
-    width: 100%;
-    height: auto;
-    margin: 3rem auto;
   }
 }

@@ -87,7 +87,44 @@
 
 			<!-- GALERÍA DE IMÁGENES (AÚN NO LA AGREGUE) -->
 			<section class="contenedor-carousel-galeria">
-				<h2>CARRUSEL DEL DEMONIO</h2>
+				<div id="carouselExampleIndicators" class="carousel slide">
+					<div class="carousel-indicators">
+						<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+						<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+						<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+						<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+						<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+						<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+					</div>
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src="../img/local/espacio-principal.jpg" class="d-block w-100" alt="salón de la clínica">
+						</div>
+						<div class="carousel-item">
+							<img src="../img/local/Plus-Optica-1.jpg" class="d-block w-100" alt="silla de trabajo y laboratorio">
+						</div>
+						<div class="carousel-item">
+							<img src="../img/local/Plus-Optica-3.jpg" class="d-block w-100" alt="computadora con tests">
+						</div>
+						<div class="carousel-item">
+							<img src="../img/local/Plus-Optica-4.jpg" class="d-block w-100" alt="maquina de trabajo">
+						</div>
+						<div class="carousel-item">
+							<img src="../img/local/Plus-Optica-6.jpg" class="d-block w-100" alt="computadora con tests">
+						</div>
+						<div class="carousel-item">
+							<img src="../img/local/Plus-Optica-8.jpg" class="d-block w-100" alt="computadora con tests">
+						</div>
+					</div>
+					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				</div>
 			</section>
 
 			<section id="lentes-de-contacto" class="contenedor-producto">
@@ -128,45 +165,59 @@
 				<h2>Lentes progresivas</h2>
 
 				<div class="grid">
-					<img src="../img/logos/progresivas/Precision-Pure.png" alt="lentes progresivas precision pure">
-					<div class="progresivas-item-1">
+					<div class="img-item">
+						<img src="../img/logos/progresivas/Precision-Pure.png" alt="lentes progresivas precision pure">
+					</div>			
+					<div class="progresivas-item">
 						<h3>Precision Pure</h3>
 						<p>Optimizadas para los ojos Tecnología Digital Inside® Visión nítida con mejores resultados en el mundo digital.</p>
 					</div>
-					<img src="../img/logos/progresivas/Precision-Plus.png" alt="lentes progresivas precision plus">
-					<div class="progresivas-item-2">
+					<div class="img-item">
+						<img src="../img/logos/progresivas/Precision-Plus.png" alt="lentes progresivas precision plus">
+					</div>
+					<div class="progresivas-item">
 						<h3>Precision Plus</h3>
 						<p>Optimizadas para los ojos y la montura Tecnologías Adaptation Control™ y FrameFit+® Óptica de precisión con cualquier montura.</p>					
 					</div>
-					<img src="../img/logos/progresivas/Precision-Superb.png" alt="lentes progresivas precision superb">
-					<div class="progresivas-item-3">
+					<div class="img-item">
+						<img src="../img/logos/progresivas/Precision-Superb.png" alt="lentes progresivas precision superb">
+					</div>
+					<div class="progresivas-item">
 						<h3>Precision Superb</h3>
 						<p>Optimizadas para los ojos, la montura y el rostro Tecnología FaceFit™ Adaptación fisiológica al rostro del usuario.</p>
 					</div>
-					<img src="../img/logos/progresivas/Individual-2.png" alt="lentes progresivas individual 2">
-					<div class="progresivas-item-4">
+					<div class="img-item">
+						<img src="../img/logos/progresivas/Individual-2.png" alt="lentes progresivas individual 2">
+					</div>
+					<div class="progresivas-item">
 						<h3>Individual 2</h3>
 						<p>Optimizadas para los ojos, la montura, el rostro y las principales actividades diarias Tecnología IndividualFit™ y Luminance Design™ A la medida para satisfacer todos los requisitos individuales.</p>
 					</div>
 				</div>
 
-				<p><span>ZEISS Idividual</span> Visión Sencilla</p>
-				<ul class="tick-verde">
-					<li>Visión hasta 50% más amplia que las lentes convencionales.</li>
-					<li>Totalmente personalizada para la prescripción de cada usuario.</li>
-					<li>Optica superior que las lentes convencionales asféricas, debido al diseño adaptado para cada usuario.</li>
-				</ul>
+				<div class="zeiss">
+					<p><span>ZEISS Idividual</span> Visión Sencilla</p>
+					<ul class="tick-verde">
+						<li>Visión hasta 50% más amplia que las lentes convencionales.</li>
+						<li>Totalmente personalizada para la prescripción de cada usuario.</li>
+						<li>Optica superior que las lentes convencionales asféricas, debido al diseño adaptado para cada usuario.</li>
+					</ul>
 
-				<img class="img" src="../img/logos/progresivas/zeiss-ej.jpg" alt="zeiss-ej">
+					<img class="img" src="../img/logos/progresivas/zeiss-ej.jpg" alt="zeiss-ej">
+				</div>
 
-				<p><span>ZEISS Sport</span></p>
-				<p>Lentes progresivas y visión sencilla <span>ZEISS Sport</span> producidas con las tecnología Precise Form by <span>ZEISS</span> que no solo compensa aberraciones desde el comienzo, si no que también incorpora el ángulo de inclinación como parámetros para cada usuario. El resultado es más comodidad, más precisión visual.</p>
-				<ul class="tick-verde">
-					<li>Elimina el efecto prismático que provocan los armazones curvos.</li>
-					<li>Compensación del valor cilindro para diseños individualizados: la posición de uso frente a los ojos (ángulo panorámico,	ángulo pantoscópico, distancia al vértice).</li>
-					<li>Aumento en la curvatura de la lente. Ángulos curvos resultan normalmente en aberraciones, astigmatismo o descentraje. La lente progresiva ZEISS Sport toma en cuenta desde el principio el ángulo panorámico para los cálculos de diseño personalizado.</li>
-				</ul>
-				<img class="img" src="../img/logos/progresivas/sport1-1030x178.jpg" alt="sport-1">
+				<div class="zeiss-sport">
+					<p><span>ZEISS Sport</span></p>
+					<p>Lentes progresivas y visión sencilla <span>ZEISS Sport</span> producidas con las tecnología Precise Form by <span>ZEISS</span> que no solo compensa aberraciones desde el comienzo, si no que también incorpora el ángulo de inclinación como parámetros para cada usuario. El resultado es más comodidad, más precisión visual.</p>
+					<ul class="tick-verde">
+						<li>Elimina el efecto prismático que provocan los armazones curvos.</li>
+						<li>Compensación del valor cilindro para diseños individualizados: la posición de uso frente a los ojos (ángulo panorámico,	ángulo pantoscópico, distancia al vértice).</li>
+						<li>Aumento en la curvatura de la lente. Ángulos curvos resultan normalmente en aberraciones, astigmatismo o descentraje. La lente progresiva ZEISS Sport toma en cuenta desde el principio el ángulo panorámico para los cálculos de diseño personalizado.</li>
+					</ul>
+
+					<img class="img" src="../img/logos/progresivas/sport1-1030x178.jpg" alt="sport-1">
+				</div>
+				
 			</section>
 
 			<!-- MARCAS -->
