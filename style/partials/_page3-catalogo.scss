@@ -1,43 +1,30 @@
 /* ------------ CATÁLOGO ------------ */
 .grid-catalogo {
-  display: grid;
-  margin: 2rem 10%;
+  display: flex;
+  margin: 1rem 10%;
   gap: 4rem;
-  transition: all 300ms;
-  grid-template-columns: 1.5fr 1fr;
 
-  grid-template-areas:
-    "productos    search"
-  ;
+  @include tablet {
+    gap: 2rem;
+  }
 
   @include movil {
-    transition: all 300ms;
-    grid-template-columns: 1fr;
-    grid-template-areas: 
-    "search"
-    "productos"
-    ;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;  
   }
-  
-  .buscador {	
-    grid-area: search;
+
+  .buscador {
     border-left: solid .1rem $fontColor;
     padding-left: 2.5rem;
-
-    @include tablet {
-      border-left: 0;
-      padding-left: 0;
-    }
+    color: $mainColor;
 
     @include movil {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      display: none;
+    }
 
-      input::placeholder {
-        text-align: center;
-      }
+    input::placeholder {
+      color: $fontColor;
     }
 
     h3 {
@@ -56,8 +43,16 @@
       @include movil {
         text-align: center;
       }
+
+      li {
+        transition: scale 300ms;
+
+        &:hover {
+          scale: 1.1;
+        }
+      }
     }
-    
+
     a {
       text-decoration: none;
       color: $fontColor;
@@ -67,31 +62,35 @@
       }
     }
   }
-  
+
   .contenedor-catalogo {
-    grid-area: productos;
+    max-width: 70%;
 
     @include movil {
-      h4 {
-        text-align: center;
-      }
+      max-width: 100%;
     }
-    
-    .categoria {  
+
+    .categoria {
       h4 {
         font-size: 2rem;
+        color: $mainColor;
+        font-style: italic;
 
         @include desktop {
           text-align: center;
         }
+
+        @include movil {
+          margin-bottom: 2rem;
+        }
       }
-      
+
       .fila-catalogo {
         display: flex;
         gap: 1.5rem;
         margin: 1.5rem 0;
         transition: all 300ms;
-      
+
         @include tablet {
           flex-direction: column;
           align-items: center;
@@ -101,9 +100,9 @@
           gap: 0;
           margin: 0;
         }
-        
+
         .caja-producto {
-          min-width: 300px;
+          width: 40%;
           border-radius: 15px;
           transition: all 300ms;
           box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -113,13 +112,13 @@
             transform: scale(1.02) translateY(-20px);
           }
 
-          @include desktop {
-            min-width: 150px;
-            transition: all 300ms;
+          @include tablet {
+            width: 80%;
           }
 
           @include movil {
-            margin: 1rem 0;
+            width: 100%;
+            margin-bottom: 2rem;
             transition: all 300ms;
           }
 
@@ -128,20 +127,20 @@
             border-top-left-radius: 15px;
             border-top-right-radius: 15px;
           }
-        
+
           .texto {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-          
+
             h5 {
               max-width: 200px;
               text-align: center;
               padding-top: 1rem;
               margin: 0 .5rem;
             }
-    
+
             p {
               max-width: 200px;
               text-align: center;
@@ -154,3 +153,64 @@
   }
 }
 
+.buscador-movil {
+  display: none;
+  color: $mainColor;
+  position: sticky;
+  top: 142px;
+  z-index: 5;
+
+  @include movil {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: white;
+
+    h2 {
+      margin-top: 1rem;
+
+      @include movil {
+        font-size: 1.3rem;
+      }
+    }
+    
+    input {
+      max-width: 200px;
+      margin: 0 auto;
+
+      &::placeholder {
+        text-align: center;
+        color: $fontColor;
+      }
+    }
+
+    .cat-movil {
+      margin: .5rem auto;
+      align-items: center;
+
+      ul {
+        margin: 0;
+        display: flex;
+        gap: 1rem;
+        padding: 0;
+        list-style: none;
+
+        li {
+          transition: scale 300ms;
+          &:hover {
+            scale: 1.1;
+          }
+        }
+
+        a {
+          text-decoration: none;
+          color: $fontColor;
+
+          &:hover {
+            color: $mainColor;
+          }
+        }
+      }
+    }
+  }
+}

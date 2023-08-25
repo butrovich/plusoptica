@@ -15,11 +15,17 @@
     @include movil {
       gap: 1rem;
     }
+
+    a {
+      scroll-margin-top: 250px;
+    }
     
     img {
       transition: all 300ms;
       height: 80px;
       margin: .5rem auto;
+
+      
       
       &:hover {
         scale: 1.1;
@@ -29,14 +35,6 @@
         height: 60px;
       }
     }    
-  }
-}
-
-html {
-  scroll-padding-top: 260px;
-
-  @include movil {
-    scroll-padding-top: 240px;
   }
 }
 

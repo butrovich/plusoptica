@@ -24,7 +24,12 @@ a:focus-visible {
 }
 
 html {
-  scroll-padding-top: 1000px;
+  scroll-padding-top: 260px;
+}
+@media screen and (max-width: 576px) {
+  html {
+    scroll-padding-top: 260px;
+  }
 }
 
 /* ------- AJUSTES PARA ELEMENTOS DE BOOTSTRAP ------- */
@@ -576,6 +581,9 @@ header nav .desplegable ul li a:hover {
     gap: 1rem;
   }
 }
+.menu-productos .navbar a {
+  scroll-margin-top: 250px;
+}
 .menu-productos .navbar img {
   transition: all 300ms;
   height: 80px;
@@ -587,15 +595,6 @@ header nav .desplegable ul li a:hover {
 @media screen and (max-width: 576px) {
   .menu-productos .navbar img {
     height: 60px;
-  }
-}
-
-html {
-  scroll-padding-top: 260px;
-}
-@media screen and (max-width: 576px) {
-  html {
-    scroll-padding-top: 240px;
   }
 }
 
@@ -694,44 +693,37 @@ html {
 
 /* ------------ CATÁLOGO ------------ */
 .grid-catalogo {
-  display: grid;
-  margin: 2rem 10%;
+  display: flex;
+  margin: 1rem 10%;
   gap: 4rem;
-  transition: all 300ms;
-  grid-template-columns: 1.5fr 1fr;
-  grid-template-areas: "productos    search";
+}
+@media screen and (max-width: 920px) {
+  .grid-catalogo {
+    gap: 2rem;
+  }
 }
 @media screen and (max-width: 576px) {
   .grid-catalogo {
-    transition: all 300ms;
-    grid-template-columns: 1fr;
-    grid-template-areas: "search" "productos";
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
   }
 }
 .grid-catalogo .buscador {
-  grid-area: search;
   border-left: solid 0.1rem #1d1d1d;
   padding-left: 2.5rem;
-}
-@media screen and (max-width: 920px) {
-  .grid-catalogo .buscador {
-    border-left: 0;
-    padding-left: 0;
-  }
+  color: #19adf3;
 }
 @media screen and (max-width: 576px) {
   .grid-catalogo .buscador {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: none;
   }
-  .grid-catalogo .buscador input::-moz-placeholder {
-    text-align: center;
-  }
-  .grid-catalogo .buscador input::placeholder {
-    text-align: center;
-  }
+}
+.grid-catalogo .buscador input::-moz-placeholder {
+  color: #1d1d1d;
+}
+.grid-catalogo .buscador input::placeholder {
+  color: #1d1d1d;
 }
 .grid-catalogo .buscador h3 {
   margin-top: 2rem;
@@ -751,6 +743,12 @@ html {
     text-align: center;
   }
 }
+.grid-catalogo .buscador ul li {
+  transition: scale 300ms;
+}
+.grid-catalogo .buscador ul li:hover {
+  scale: 1.1;
+}
 .grid-catalogo .buscador a {
   text-decoration: none;
   color: #1d1d1d;
@@ -759,19 +757,26 @@ html {
   color: #19adf3;
 }
 .grid-catalogo .contenedor-catalogo {
-  grid-area: productos;
+  max-width: 70%;
 }
 @media screen and (max-width: 576px) {
-  .grid-catalogo .contenedor-catalogo h4 {
-    text-align: center;
+  .grid-catalogo .contenedor-catalogo {
+    max-width: 100%;
   }
 }
 .grid-catalogo .contenedor-catalogo .categoria h4 {
   font-size: 2rem;
+  color: #19adf3;
+  font-style: italic;
 }
 @media screen and (max-width: 1450px) {
   .grid-catalogo .contenedor-catalogo .categoria h4 {
     text-align: center;
+  }
+}
+@media screen and (max-width: 576px) {
+  .grid-catalogo .contenedor-catalogo .categoria h4 {
+    margin-bottom: 2rem;
   }
 }
 .grid-catalogo .contenedor-catalogo .categoria .fila-catalogo {
@@ -793,7 +798,7 @@ html {
   }
 }
 .grid-catalogo .contenedor-catalogo .categoria .fila-catalogo .caja-producto {
-  min-width: 300px;
+  width: 40%;
   border-radius: 15px;
   transition: all 300ms;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -802,15 +807,15 @@ html {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
   transform: scale(1.02) translateY(-20px);
 }
-@media screen and (max-width: 1450px) {
+@media screen and (max-width: 920px) {
   .grid-catalogo .contenedor-catalogo .categoria .fila-catalogo .caja-producto {
-    min-width: 150px;
-    transition: all 300ms;
+    width: 80%;
   }
 }
 @media screen and (max-width: 576px) {
   .grid-catalogo .contenedor-catalogo .categoria .fila-catalogo .caja-producto {
-    margin: 1rem 0;
+    width: 100%;
+    margin-bottom: 2rem;
     transition: all 300ms;
   }
 }
@@ -834,6 +839,68 @@ html {
 .grid-catalogo .contenedor-catalogo .categoria .fila-catalogo .caja-producto .texto p {
   max-width: 200px;
   text-align: center;
+}
+
+.buscador-movil {
+  display: none;
+  color: #19adf3;
+  position: sticky;
+  top: 142px;
+  z-index: 5;
+}
+@media screen and (max-width: 576px) {
+  .buscador-movil {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: white;
+  }
+  .buscador-movil h2 {
+    margin-top: 1rem;
+  }
+}
+@media screen and (max-width: 576px) and (max-width: 576px) {
+  .buscador-movil h2 {
+    font-size: 1.3rem;
+  }
+}
+@media screen and (max-width: 576px) {
+  .buscador-movil input {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+  .buscador-movil input::-moz-placeholder {
+    text-align: center;
+    color: #1d1d1d;
+  }
+  .buscador-movil input::placeholder {
+    text-align: center;
+    color: #1d1d1d;
+  }
+  .buscador-movil .cat-movil {
+    margin: 0.5rem auto;
+    align-items: center;
+  }
+  .buscador-movil .cat-movil ul {
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+  }
+  .buscador-movil .cat-movil ul li {
+    transition: scale 300ms;
+  }
+  .buscador-movil .cat-movil ul li:hover {
+    scale: 1.1;
+  }
+  .buscador-movil .cat-movil ul a {
+    text-decoration: none;
+    color: #1d1d1d;
+  }
+  .buscador-movil .cat-movil ul a:hover {
+    color: #19adf3;
+  }
 }
 
 /* ------------ RESERVAS ------------ */
