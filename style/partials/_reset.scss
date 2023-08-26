@@ -19,8 +19,4 @@ a:focus-visible {
 
  html {
   scroll-padding-top: 260px;
-
-  @include movil {
-    scroll-padding-top: 260px;
-	}
  }
